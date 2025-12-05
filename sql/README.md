@@ -89,18 +89,26 @@ mysql -u username -p factorbase -e "SHOW TABLES;"
 
 ### SQLite (for development/testing)
 
-Note: SQLite requires minor syntax adjustments (INT AUTO_INCREMENT → INTEGER PRIMARY KEY AUTOINCREMENT)
+**Note:** The provided `create_tables.sql` is designed for MySQL. For SQLite, you'll need to:
+- Replace `INT AUTO_INCREMENT` with `INTEGER PRIMARY KEY AUTOINCREMENT`
+- Remove `ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci`
+- Separate index creation from table definition
+- Always enable foreign key constraints before operations
+
+Example SQLite usage (after converting syntax):
 
 ```bash
-# Create database and import schema
-sqlite3 factorbase.db < create_tables.sql
+# Create database with converted schema
+sqlite3 factorbase.db < create_tables_sqlite.sql
+
+# Always enable foreign key constraints (required for each connection)
+sqlite3 factorbase.db "PRAGMA foreign_keys = ON;"
 
 # Verify tables
 sqlite3 factorbase.db ".schema"
-
-# Enable foreign key constraints
-sqlite3 factorbase.db "PRAGMA foreign_keys = ON;"
 ```
+
+For testing purposes, it's recommended to use a MySQL/MariaDB instance or Docker container rather than SQLite to ensure compatibility with the production schema.
 
 ## Schema Design Principles
 
