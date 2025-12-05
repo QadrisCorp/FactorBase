@@ -1,0 +1,20 @@
+{
+  "measure_id": "CAPEX_TA",
+  "measure_name": "CAPEX_TA",
+  "display_name": "CAPEX to Total Assets",
+  "factor": "Investment",
+  "description": "Capital Expenditure scaled by Total Assets. CAPEX/TA = Capital Expenditure / Total Assets. Measures intensity of capital investment.",
+  "formula": {
+    "type": "ratio",
+    "numerator": "capex_ttm",
+    "denominator": "total_assets",
+    "window": "TTM"
+  },
+  "data_source": [
+    "financials.cf_quarterly",
+    "financials.bs_quarterly"
+  ],
+  "frequency": "quarterly",
+  "normalization": "zscore_cross_sectional",
+  "notes": "資本支出密度指標。高 CAPEX 公司可能面臨過度投資風險。"
+}

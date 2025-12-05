@@ -1,0 +1,20 @@
+{
+  "measure_id": "GP_TA",
+  "measure_name": "GP_TA",
+  "display_name": "Gross Profitability",
+  "factor": "Profitability",
+  "description": "Gross Profit scaled by Total Assets. GP/TA = Gross Profit / Total Assets. Novy-Marx (2013) argues this is the cleanest accounting measure of true economic profitability.",
+  "formula": {
+    "type": "ratio",
+    "numerator": "gross_profit_ttm",
+    "denominator": "total_assets",
+    "window": "TTM"
+  },
+  "data_source": [
+    "financials.is_quarterly",
+    "financials.bs_quarterly"
+  ],
+  "frequency": "quarterly",
+  "normalization": "zscore_cross_sectional",
+  "notes": "Novy-Marx (2013) Gross Profitability Premium 的核心 measure。Fama-French (2015) RMW 因子的重要組成。"
+}

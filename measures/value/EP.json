@@ -1,0 +1,20 @@
+{
+  "measure_id": "EP_TTM",
+  "measure_name": "EP_TTM",
+  "display_name": "Earnings to Price (TTM)",
+  "factor": "Value",
+  "description": "Earnings to Price ratio using trailing twelve months earnings. EP = Net Income (TTM) / Market Cap. Higher EP indicates potentially undervalued stocks.",
+  "formula": {
+    "type": "ratio",
+    "numerator": "net_income_ttm",
+    "denominator": "market_value_equity",
+    "window": "TTM"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes",
+    "financials.is_quarterly"
+  ],
+  "frequency": "daily",
+  "normalization": "zscore_cross_sectional",
+  "notes": "EP 為 PE 的倒數，避免負值 PE 的問題。常見於 Basu (1977), Fama-French (1992) 等研究。"
+}

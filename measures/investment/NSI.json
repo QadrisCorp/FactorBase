@@ -1,0 +1,18 @@
+{
+  "measure_id": "NSI",
+  "measure_name": "NSI",
+  "display_name": "Net Stock Issuance",
+  "factor": "Investment",
+  "description": "Net Stock Issuance = log(split-adjusted shares outstanding at fiscal year end t) - log(split-adjusted shares outstanding at fiscal year end t-1). Measures equity financing activity.",
+  "formula": {
+    "type": "log_change",
+    "calculation": "log(shares_t) - log(shares_t_minus_1)",
+    "window": "1Y"
+  },
+  "data_source": [
+    "financials.shares_outstanding"
+  ],
+  "frequency": "annual",
+  "normalization": "zscore_cross_sectional",
+  "notes": "Pontiff & Woodgate (2008)。股票發行與未來報酬呈負相關。"
+}

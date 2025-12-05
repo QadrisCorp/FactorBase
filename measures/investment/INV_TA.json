@@ -1,0 +1,19 @@
+{
+  "measure_id": "INV_TA",
+  "measure_name": "INV_TA",
+  "display_name": "Investment to Assets",
+  "factor": "Investment",
+  "description": "Change in total assets scaled by lagged total assets. Used in Fama-French five-factor model as the basis for CMA (Conservative Minus Aggressive) factor.",
+  "formula": {
+    "type": "growth_rate",
+    "numerator": "delta_total_assets",
+    "denominator": "total_assets_lag",
+    "window": "1Y"
+  },
+  "data_source": [
+    "financials.bs_quarterly"
+  ],
+  "frequency": "quarterly",
+  "normalization": "zscore_cross_sectional",
+  "notes": "Fama-French (2015) 五因子模型 CMA 因子定義。低投資公司傾向有較高報酬。"
+}

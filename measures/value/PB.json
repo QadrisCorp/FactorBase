@@ -1,0 +1,20 @@
+{
+  "measure_id": "PB",
+  "measure_name": "PB",
+  "display_name": "Price to Book Ratio",
+  "factor": "Value",
+  "description": "Price to Book ratio = Market capitalization / Book value of equity. Lower PB indicates potentially undervalued stocks.",
+  "formula": {
+    "type": "ratio",
+    "numerator": "market_value_equity",
+    "denominator": "book_value_equity",
+    "window": "MRQ"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes",
+    "financials.bs_quarterly"
+  ],
+  "frequency": "daily",
+  "normalization": "zscore_cross_sectional",
+  "notes": "經典 Value 因子，由 Fama-French (1992, 1993) 研究確立。常以 BM (Book-to-Market) 的倒數形式呈現。"
+}

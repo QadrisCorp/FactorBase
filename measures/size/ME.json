@@ -1,0 +1,18 @@
+{
+  "measure_id": "ME",
+  "measure_name": "ME",
+  "display_name": "Market Equity (Market Cap)",
+  "factor": "Size",
+  "description": "Market Equity = Stock Price × Shares Outstanding. The total market value of a company's outstanding shares. Smaller companies tend to have higher expected returns (Size Effect).",
+  "formula": {
+    "type": "product",
+    "calculation": "price * shares_outstanding",
+    "window": "current"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes"
+  ],
+  "frequency": "daily",
+  "normalization": "log_transform",
+  "notes": "Fama-French (1992, 1993) SMB 因子的核心 sorting variable。通常使用 log(ME) 進行分析。"
+}

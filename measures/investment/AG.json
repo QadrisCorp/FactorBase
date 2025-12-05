@@ -1,0 +1,19 @@
+{
+  "measure_id": "AG",
+  "measure_name": "AG",
+  "display_name": "Asset Growth",
+  "factor": "Investment",
+  "description": "Year-over-year total asset growth rate. AG = (Total Assets(t) - Total Assets(t-1)) / Total Assets(t-1). Higher asset growth is associated with lower future returns.",
+  "formula": {
+    "type": "growth_rate",
+    "numerator": "total_assets_change",
+    "denominator": "total_assets_lag",
+    "window": "1Y"
+  },
+  "data_source": [
+    "financials.bs_quarterly"
+  ],
+  "frequency": "quarterly",
+  "normalization": "zscore_cross_sectional",
+  "notes": "Cooper, Gulen, Schill (2008) Asset Growth Effect。Fama-French (2015) CMA 因子的核心組成。"
+}

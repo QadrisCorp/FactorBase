@@ -1,0 +1,20 @@
+{
+  "measure_id": "CP_TTM",
+  "measure_name": "CP_TTM",
+  "display_name": "Cash Flow to Price (TTM)",
+  "factor": "Value",
+  "description": "Cash Flow to Price ratio using trailing twelve months operating cash flow. CP = Operating Cash Flow (TTM) / Market Cap.",
+  "formula": {
+    "type": "ratio",
+    "numerator": "operating_cash_flow_ttm",
+    "denominator": "market_value_equity",
+    "window": "TTM"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes",
+    "financials.cf_quarterly"
+  ],
+  "frequency": "daily",
+  "normalization": "zscore_cross_sectional",
+  "notes": "現金流基礎的價值指標，較不易被會計操縱。參考 Lakonishok, Shleifer, Vishny (1994)。"
+}

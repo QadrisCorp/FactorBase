@@ -1,0 +1,18 @@
+{
+  "measure_id": "LN_ME",
+  "measure_name": "LN_ME",
+  "display_name": "Log Market Cap",
+  "factor": "Size",
+  "description": "Natural logarithm of Market Equity. LN_ME = ln(Price × Shares Outstanding). Log transformation normalizes the skewed distribution of market cap.",
+  "formula": {
+    "type": "log",
+    "calculation": "ln(market_cap)",
+    "window": "current"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes"
+  ],
+  "frequency": "daily",
+  "normalization": "zscore_cross_sectional",
+  "notes": "對數市值，常用於迴歸分析。Banz (1981) 最早記錄 Size Effect。"
+}
