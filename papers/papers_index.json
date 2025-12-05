@@ -1,0 +1,179 @@
+{
+  "by_id": {
+    "1": {
+      "paper_id": 1,
+      "title": "Common risk factors in the returns on stocks and bonds",
+      "authors": "Fama, Eugene F.; French, Kenneth R.",
+      "year": 1993,
+      "journal": "Journal of Financial Economics",
+      "market": "US",
+      "asset_class": "Equity",
+      "abstract": "This paper identifies five common risk factors in the returns on stocks and bonds. There are three stock-market factors: an overall market factor and factors related to firm size and book-to-market equity. There are two bond-market factors, related to maturity and default risks. Stock returns have shared variation due to the stock-market factors, and they are linked to bond returns through shared variation in the bond-market factors. Controlling for the five factors, we find no evidence that corporate bond returns have special sensitivity to stock returns.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "Seminal paper introducing the three-factor model (Market, Size, Value). Forms the foundation for modern factor investing research. The SMB (Small Minus Big) and HML (High Minus Low) factors have become standard in asset pricing."
+    },
+    "2": {
+      "paper_id": 2,
+      "title": "On Persistence in Mutual Fund Performance",
+      "authors": "Carhart, Mark M.",
+      "year": 1997,
+      "journal": "Journal of Finance",
+      "market": "US",
+      "asset_class": "Equity",
+      "abstract": "This paper examines the consistency and sources of mutual fund performance. Using a sample of 1,892 diversified equity mutual funds from 1962 to 1993, we find that the four-factor model that includes momentum (UMD - Up Minus Down) largely explains persistence in returns. Common factors in stock returns and investment expenses almost completely explain persistence in equity mutual funds' mean and risk-adjusted returns. Hendricks, Patel, and Zeckhauser's (1993) 'hot hands' result is mostly due to the one-year momentum effect of Jegadeesh and Titman (1993).",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "Extended Fama-French three-factor model by adding momentum factor (UMD). The Carhart four-factor model (Market, Size, Value, Momentum) became a standard benchmark for performance evaluation. Demonstrated that momentum is a persistent factor in stock returns."
+    },
+    "3": {
+      "paper_id": 3,
+      "title": "A five-factor asset pricing model",
+      "authors": "Fama, Eugene F.; French, Kenneth R.",
+      "year": 2015,
+      "journal": "Journal of Financial Economics",
+      "market": "US",
+      "asset_class": "Equity",
+      "abstract": "A five-factor model directed at capturing the size, value, profitability, and investment patterns in average stock returns performs better than the three-factor model of Fama and French (1993). The five-factor model's main problem is its failure to capture the low average returns on small stocks whose returns behave like those of firms that invest a lot despite low profitability. The model's performance is not sensitive to the way its factors are defined. With the addition of profitability and investment factors, the value factor of the three-factor model becomes redundant for describing average returns in the sample we examine.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "Extended the three-factor model to five factors by adding profitability (RMW - Robust Minus Weak) and investment (CMA - Conservative Minus Aggressive) factors. Shows that profitability and investment patterns are priced in stock returns. The value factor (HML) becomes less important when profitability and investment are controlled."
+    },
+    "4": {
+      "paper_id": 4,
+      "title": "The other side of value: The gross profitability premium",
+      "authors": "Novy-Marx, Robert",
+      "year": 2013,
+      "journal": "Journal of Financial Economics",
+      "market": "US",
+      "asset_class": "Equity",
+      "abstract": "Profitability, measured by gross profits-to-assets, has roughly the same power as book-to-market predicting the cross-section of average returns. Profitable firms generate significantly higher returns than unprofitable firms, despite having significantly higher valuation ratios. Controlling for profitability also dramatically increases the performance of value strategies, especially among the largest, most liquid stocks. These results are difficult to reconcile with popular explanations of the value premium, as profitable firms are less prone to distress, have longer cash-flow durations, and have lower levels of operating leverage.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "Introduced gross profitability as a powerful predictor of stock returns. Gross profitability (revenue minus cost of goods sold, scaled by assets) is cleaner than traditional profitability measures. Combined with value, creates strong factor portfolios. Influenced the development of the Fama-French five-factor model."
+    },
+    "5": {
+      "paper_id": 5,
+      "title": "Digesting anomalies: An investment approach",
+      "authors": "Hou, Kewei; Xue, Chen; Zhang, Lu",
+      "year": 2015,
+      "journal": "Review of Financial Studies",
+      "market": "US",
+      "asset_class": "Equity",
+      "abstract": "We build on the investment approach of Cochrane (1991, 1996) to develop an alternative factor model that uses the market factor, a size factor, an investment factor, and a profitability factor (the q-factor model). The q-factor model largely summarizes the cross-section of average stock returns. A comprehensive examination of nearly 80 anomalies shows that about one-half of the anomalies are insignificant in the broad cross-section of stocks, and the q-factor model fully captures about one-half of the significant anomalies. With the exception of momentum, the q-factor model outperforms the Fama-French three-factor and four-factor models across all the anomalies.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "Introduced the q-factor model based on investment theory. Uses four factors: Market, Size (ME), Investment (I/A), and Profitability (ROE). Provides a theoretical foundation for factor models based on corporate investment decisions. Successfully explains many anomalies better than traditional models, except momentum."
+    },
+    "6": {
+      "paper_id": 6,
+      "title": "Value and Momentum Everywhere",
+      "authors": "Asness, Clifford S.; Moskowitz, Tobias J.; Pedersen, Lasse Heje",
+      "year": 2013,
+      "journal": "Journal of Finance",
+      "market": "Global",
+      "asset_class": "Multi-Asset",
+      "abstract": "We find consistent value and momentum return premia across eight diverse markets and asset classes, and a strong common factor structure among their returns. Value and momentum returns correlate more strongly across asset classes than passive exposures to the asset classes, but value and momentum are negatively correlated with each other, both within and across asset classes. Our evidence suggests that value and momentum returns have a common component across markets and asset classes, consistent with theories based on characteristic risk or market inefficiency, but difficult to reconcile with asset-class-specific characteristics or market frictions.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "Demonstrates that value and momentum factors exist across multiple asset classes (stocks, bonds, currencies, commodities) and geographic markets. Shows value and momentum are negatively correlated with each other. Provides evidence for universal nature of these factors, supporting both risk-based and behavioral explanations."
+    },
+    "7": {
+      "paper_id": 7,
+      "title": "Quality Minus Junk",
+      "authors": "Asness, Clifford S.; Frazzini, Andrea; Pedersen, Lasse Heje",
+      "year": 2019,
+      "journal": "Review of Accounting Studies",
+      "market": "Global",
+      "asset_class": "Equity",
+      "abstract": "We define a quality security as one that has characteristics that, all-else-equal, an investor should be willing to pay a higher price for: stocks that are safe, profitable, growing, and well managed. High-quality stocks do have higher prices on average, but not by a lot. A portfolio that is long quality stocks and short junk stocks earns significant risk-adjusted returns in the U.S. and globally across 24 countries. The quality-minus-junk (QMJ) factor is not subsumed by a wide variety of existing factors, and it is priced in the cross-section.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "Introduced a comprehensive quality factor (QMJ) combining multiple quality characteristics: profitability, growth, safety, and payout. Quality stocks are defined as profitable, stable, growing companies with sound governance. Shows that high-quality stocks outperform low-quality stocks on a risk-adjusted basis globally. The quality factor is distinct from other known factors."
+    }
+  },
+  "by_market": {
+    "US": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Global": [
+      6,
+      7
+    ]
+  },
+  "by_asset_class": {
+    "Equity": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "Multi-Asset": [
+      6
+    ]
+  },
+  "by_year": {
+    "1993": [
+      1
+    ],
+    "1997": [
+      2
+    ],
+    "2015": [
+      3,
+      5
+    ],
+    "2013": [
+      4,
+      6
+    ],
+    "2019": [
+      7
+    ]
+  },
+  "by_author": {
+    "Fama, Eugene F.": [
+      1,
+      3
+    ],
+    "French, Kenneth R.": [
+      1,
+      3
+    ],
+    "Carhart, Mark M.": [
+      2
+    ],
+    "Novy-Marx, Robert": [
+      4
+    ],
+    "Hou, Kewei": [
+      5
+    ],
+    "Xue, Chen": [
+      5
+    ],
+    "Zhang, Lu": [
+      5
+    ],
+    "Asness, Clifford S.": [
+      6,
+      7
+    ],
+    "Moskowitz, Tobias J.": [
+      6
+    ],
+    "Pedersen, Lasse Heje": [
+      6,
+      7
+    ],
+    "Frazzini, Andrea": [
+      7
+    ]
+  }
+}
