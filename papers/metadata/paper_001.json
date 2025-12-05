@@ -1,0 +1,13 @@
+{
+  "paper_id": 1,
+  "title": "Common risk factors in the returns on stocks and bonds",
+  "authors": "Fama, Eugene F.; French, Kenneth R.",
+  "year": 1993,
+  "journal": "Journal of Financial Economics",
+  "market": "US",
+  "asset_class": "Equity",
+  "abstract": "This paper identifies five common risk factors in the returns on stocks and bonds. There are three stock-market factors: an overall market factor and factors related to firm size and book-to-market equity. There are two bond-market factors, related to maturity and default risks. Stock returns have shared variation due to the stock-market factors, and they are linked to bond returns through shared variation in the bond-market factors. Controlling for the five factors, we find no evidence that corporate bond returns have special sensitivity to stock returns.",
+  "conclusion_sign": "positive",
+  "replicable": "yes",
+  "notes": "Seminal paper introducing the three-factor model (Market, Size, Value). Forms the foundation for modern factor investing research. The SMB (Small Minus Big) and HML (High Minus Low) factors have become standard in asset pricing."
+}
