@@ -1,0 +1,11 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "python collect_repo_status.py": true,
+    "python generate_report.py": true,
+    "/^cd\\b/": true,
+    "/^python\\b/": true,
+    "/^gh\\b/": true,
+    "ls": true,
+    "cat": true
+  }
+}
