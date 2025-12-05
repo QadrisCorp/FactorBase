@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-12-05",
+  "total_measures": 20,
+  "factors": [
+    {
+      "factor": "Value",
+      "count": 5,
+      "measures": [
+        {"measure_id": "PB", "file": "value/PB.json"},
+        {"measure_id": "EP_TTM", "file": "value/EP.json"},
+        {"measure_id": "CP_TTM", "file": "value/CP.json"},
+        {"measure_id": "BM", "file": "value/BM.json"},
+        {"measure_id": "SP_TTM", "file": "value/SP.json"}
+      ]
+    },
+    {
+      "factor": "Momentum",
+      "count": 4,
+      "measures": [
+        {"measure_id": "MOM_12M", "file": "momentum/MOM_12M.json"},
+        {"measure_id": "MOM_6M", "file": "momentum/MOM_6M.json"},
+        {"measure_id": "MOM_1M", "file": "momentum/MOM_1M.json"},
+        {"measure_id": "HIGH_52W", "file": "momentum/HIGH_52W.json"}
+      ]
+    },
+    {
+      "factor": "Profitability",
+      "count": 5,
+      "measures": [
+        {"measure_id": "ROE_TTM", "file": "profitability/ROE.json"},
+        {"measure_id": "ROA_TTM", "file": "profitability/ROA.json"},
+        {"measure_id": "GP_TA", "file": "profitability/GP_TA.json"},
+        {"measure_id": "OP_BE", "file": "profitability/OP_BE.json"},
+        {"measure_id": "GM_TTM", "file": "profitability/GM.json"}
+      ]
+    },
+    {
+      "factor": "Investment",
+      "count": 4,
+      "measures": [
+        {"measure_id": "AG", "file": "investment/AG.json"},
+        {"measure_id": "INV_TA", "file": "investment/INV_TA.json"},
+        {"measure_id": "CAPEX_TA", "file": "investment/CAPEX_TA.json"},
+        {"measure_id": "NSI", "file": "investment/NSI.json"}
+      ]
+    },
+    {
+      "factor": "Size",
+      "count": 2,
+      "measures": [
+        {"measure_id": "ME", "file": "size/ME.json"},
+        {"measure_id": "LN_ME", "file": "size/LN_ME.json"}
+      ]
+    }
+  ],
+  "references": [
+    "Fama, E. F., & French, K. R. (1992). The cross-section of expected stock returns.",
+    "Fama, E. F., & French, K. R. (1993). Common risk factors in the returns on stocks and bonds.",
+    "Fama, E. F., & French, K. R. (2015). A five-factor asset pricing model.",
+    "Jegadeesh, N., & Titman, S. (1993). Returns to buying winners and selling losers.",
+    "Carhart, M. M. (1997). On persistence in mutual fund performance.",
+    "Novy-Marx, R. (2013). The other side of value: The gross profitability premium.",
+    "Cooper, M. J., Gulen, H., & Schill, M. J. (2008). Asset growth and the cross-section of stock returns.",
+    "Banz, R. W. (1981). The relationship between return and market value of common stocks."
+  ]
+}

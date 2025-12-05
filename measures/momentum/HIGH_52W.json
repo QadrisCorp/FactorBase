@@ -1,0 +1,19 @@
+{
+  "measure_id": "HIGH_52W",
+  "measure_name": "HIGH_52W",
+  "display_name": "52-Week High Ratio",
+  "factor": "Momentum",
+  "description": "Current price relative to 52-week high. HIGH_52W = Current Price / 52-Week High Price. Values closer to 1 indicate stock is near its high.",
+  "formula": {
+    "type": "ratio",
+    "numerator": "current_price",
+    "denominator": "52_week_high_price",
+    "window": "52W"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes"
+  ],
+  "frequency": "daily",
+  "normalization": "zscore_cross_sectional",
+  "notes": "52 週高點比率，見 George & Hwang (2004)。作為動能的替代指標。"
+}

@@ -1,0 +1,19 @@
+{
+  "measure_id": "MOM_1M",
+  "measure_name": "MOM_1M",
+  "display_name": "1-Month Return (Short-term Reversal)",
+  "factor": "Momentum",
+  "description": "1-month return, typically used as short-term reversal factor. MOM_1M = (P(t) / P(t-1)) - 1. Often shows negative premium (reversal effect).",
+  "formula": {
+    "type": "return",
+    "calculation": "(price_t / price_t_minus_1) - 1",
+    "window": "1M",
+    "skip_recent": "0"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes"
+  ],
+  "frequency": "monthly",
+  "normalization": "zscore_cross_sectional",
+  "notes": "短期反轉效應，見 Jegadeesh (1990)。通常作為控制變數使用。"
+}

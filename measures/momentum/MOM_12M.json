@@ -1,0 +1,19 @@
+{
+  "measure_id": "MOM_12M",
+  "measure_name": "MOM_12M",
+  "display_name": "12-Month Momentum",
+  "factor": "Momentum",
+  "description": "12-month cumulative return excluding the most recent month. MOM_12M = (P(t-1) / P(t-12)) - 1. The most recent month is excluded to avoid short-term reversal effects.",
+  "formula": {
+    "type": "return",
+    "calculation": "(price_t_minus_1 / price_t_minus_12) - 1",
+    "window": "12M",
+    "skip_recent": "1M"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes"
+  ],
+  "frequency": "monthly",
+  "normalization": "zscore_cross_sectional",
+  "notes": "經典動能因子，由 Jegadeesh & Titman (1993) 確立。Carhart (1997) 將其納入四因子模型。"
+}

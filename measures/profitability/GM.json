@@ -1,0 +1,19 @@
+{
+  "measure_id": "GM_TTM",
+  "measure_name": "GM_TTM",
+  "display_name": "Gross Margin (TTM)",
+  "factor": "Profitability",
+  "description": "Gross Margin = Gross Profit / Revenue. Measures the percentage of revenue retained after direct costs of production.",
+  "formula": {
+    "type": "ratio",
+    "numerator": "gross_profit_ttm",
+    "denominator": "revenue_ttm",
+    "window": "TTM"
+  },
+  "data_source": [
+    "financials.is_quarterly"
+  ],
+  "frequency": "quarterly",
+  "normalization": "zscore_cross_sectional",
+  "notes": "毛利率，反映公司產品定價能力與成本控制。常作為 Quality 因子的組成。"
+}

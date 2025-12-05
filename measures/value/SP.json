@@ -1,0 +1,20 @@
+{
+  "measure_id": "SP_TTM",
+  "measure_name": "SP_TTM",
+  "display_name": "Sales to Price (TTM)",
+  "factor": "Value",
+  "description": "Sales to Price ratio using trailing twelve months revenue. SP = Revenue (TTM) / Market Cap.",
+  "formula": {
+    "type": "ratio",
+    "numerator": "revenue_ttm",
+    "denominator": "market_value_equity",
+    "window": "TTM"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes",
+    "financials.is_quarterly"
+  ],
+  "frequency": "daily",
+  "normalization": "zscore_cross_sectional",
+  "notes": "營收基礎的價值指標，適用於虧損公司的估值比較。"
+}

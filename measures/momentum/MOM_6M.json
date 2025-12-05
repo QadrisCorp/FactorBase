@@ -1,0 +1,19 @@
+{
+  "measure_id": "MOM_6M",
+  "measure_name": "MOM_6M",
+  "display_name": "6-Month Momentum",
+  "factor": "Momentum",
+  "description": "6-month cumulative return excluding the most recent month. MOM_6M = (P(t-1) / P(t-6)) - 1.",
+  "formula": {
+    "type": "return",
+    "calculation": "(price_t_minus_1 / price_t_minus_6) - 1",
+    "window": "6M",
+    "skip_recent": "1M"
+  },
+  "data_source": [
+    "marketstddb.md_ta_dailyquotes"
+  ],
+  "frequency": "monthly",
+  "normalization": "zscore_cross_sectional",
+  "notes": "中期動能指標，常與 12M 動能搭配使用。"
+}
