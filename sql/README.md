@@ -5,6 +5,8 @@ This directory contains the SQL schema files for the FactorBase knowledge reposi
 ## Files
 
 - `create_tables.sql` - Main schema definition file containing all table structures
+- `validate_schema.sql` - Validation script to verify schema installation
+- `README.md` - This documentation file
 
 ## Database Tables
 
@@ -85,6 +87,9 @@ mysql -u username -p factorbase < create_tables.sql
 
 # Verify tables
 mysql -u username -p factorbase -e "SHOW TABLES;"
+
+# Validate schema installation
+mysql -u username -p factorbase < validate_schema.sql
 ```
 
 ### SQLite (for development/testing)
