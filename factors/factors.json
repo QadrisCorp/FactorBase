@@ -1,0 +1,60 @@
+{
+  "factors": [
+    {
+      "factor_id": 1,
+      "factor_name": "Value",
+      "style": "Style",
+      "description": {
+        "en": "Measures the relative cheapness of a company's valuation compared to its fundamental indicators (such as book value, earnings, cash flow). Companies with lower valuations relative to fundamentals tend to deliver higher returns.",
+        "zh": "基於公司估值相對於基本面指標（如帳面價值、盈餘、現金流）的相對便宜程度。估值相對較低的公司往往能提供較高的報酬。"
+      }
+    },
+    {
+      "factor_id": 2,
+      "factor_name": "Size",
+      "style": "Style",
+      "description": {
+        "en": "Based on the market capitalization of companies. The size effect suggests that smaller companies tend to have higher expected returns than larger companies, though this premium has varied over time.",
+        "zh": "基於公司市值大小。規模效應顯示小型公司往往比大型公司具有較高的預期報酬，儘管這種溢酬隨時間有所變化。"
+      }
+    },
+    {
+      "factor_id": 3,
+      "factor_name": "Momentum",
+      "style": "Style",
+      "description": {
+        "en": "Based on the persistence of past returns. Stocks that have performed well (or poorly) in the recent past tend to continue performing well (or poorly) in the near future. Typically measured using 6-12 month past returns.",
+        "zh": "基於過去報酬的持續性。近期表現良好（或不佳）的股票往往在不久的將來繼續表現良好（或不佳）。通常使用過去 6-12 個月的報酬來衡量。"
+      }
+    },
+    {
+      "factor_id": 4,
+      "factor_name": "Profitability",
+      "style": "Quality",
+      "description": {
+        "en": "Based on a company's profitability and earnings quality. Companies with higher profitability, measured through metrics like ROE, ROA, gross margin, or operating profitability, tend to deliver superior returns.",
+        "zh": "基於公司的獲利能力與盈餘品質。透過 ROE、ROA、毛利率或營業利益率等指標衡量，獲利能力較高的公司往往能帶來更優異的報酬。"
+      }
+    },
+    {
+      "factor_id": 5,
+      "factor_name": "Investment",
+      "style": "Style",
+      "description": {
+        "en": "Based on a company's capital expenditure and asset growth. Companies that invest conservatively (lower asset growth) tend to have higher returns than those that invest aggressively. This reflects the investment factor from the Fama-French five-factor model and HXZ q-factor model.",
+        "zh": "基於公司的資本支出與資產成長。投資較為保守（資產成長較低）的公司往往比積極投資的公司擁有較高的報酬。這反映了 Fama-French 五因子模型與 HXZ q-factor 模型中的投資因子。"
+      }
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-12-05",
+    "description": "Core factors taxonomy for FactorBase. These 5 factors represent the fundamental drivers of cross-sectional stock returns based on academic literature (Fama-French, Carhart, Hou-Xue-Zhang).",
+    "sources": [
+      "Fama, E. F., & French, K. R. (1993). Common risk factors in the returns on stocks and bonds. Journal of Financial Economics.",
+      "Fama, E. F., & French, K. R. (2015). A five-factor asset pricing model. Journal of Financial Economics.",
+      "Hou, K., Xue, C., & Zhang, L. (2015). Digesting anomalies: An investment approach. Review of Financial Studies.",
+      "Carhart, M. M. (1997). On persistence in mutual fund performance. Journal of Finance."
+    ]
+  }
+}
