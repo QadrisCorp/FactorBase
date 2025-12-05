@@ -102,10 +102,10 @@ def validate_factors_json(file_path: str) -> bool:
         
         # Validate metadata
         metadata = data['metadata']
-        required_metadata_fields = {'version', 'last_updated', 'description'}
-        missing_metadata = required_metadata_fields - set(metadata.keys())
+        recommended_metadata_fields = {'version', 'last_updated', 'description'}
+        missing_metadata = recommended_metadata_fields - set(metadata.keys())
         if missing_metadata:
-            print(f"⚠ Metadata missing optional fields: {missing_metadata}")
+            print(f"⚠ Metadata missing recommended fields: {missing_metadata}")
         
         print("✓ Metadata structure is valid")
         

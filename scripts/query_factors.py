@@ -25,10 +25,23 @@ class FactorsQuery:
         Args:
             factors_file: Path to the factors.json file
         """
-        with open(factors_file, 'r', encoding='utf-8') as f:
-            self.data = json.load(f)
-        self.factors = self.data['factors']
-        self.metadata = self.data.get('metadata', {})
+        try:
+            with open(factors_file, 'r', encoding='utf-8') as f:
+                self.data = json.load(f)
+            self.factors = self.data['factors']
+            self.metadata = self.data.get('metadata', {})
+        except FileNotFoundError:
+            print(f"Error: factors.json not found at {factors_file}")
+            print("Please ensure you're running the script from the correct directory.")
+            sys.exit(1)
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON in {factors_file}")
+            print(f"Details: {e}")
+            sys.exit(1)
+        except KeyError as e:
+            print(f"Error: Missing required key in factors.json: {e}")
+            print("The JSON file may be corrupted or have an incorrect structure.")
+            sys.exit(1)
     
     def list_all(self) -> List[Dict[str, Any]]:
         """
