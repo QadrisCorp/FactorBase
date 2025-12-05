@@ -1,0 +1,13 @@
+{
+  "paper_id": 7,
+  "title": "Quality Minus Junk",
+  "authors": "Asness, Clifford S.; Frazzini, Andrea; Pedersen, Lasse Heje",
+  "year": 2019,
+  "journal": "Review of Accounting Studies",
+  "market": "Global",
+  "asset_class": "Equity",
+  "abstract": "We define a quality security as one that has characteristics that, all-else-equal, an investor should be willing to pay a higher price for: stocks that are safe, profitable, growing, and well managed. High-quality stocks do have higher prices on average, but not by a lot. A portfolio that is long quality stocks and short junk stocks earns significant risk-adjusted returns in the U.S. and globally across 24 countries. The quality-minus-junk (QMJ) factor is not subsumed by a wide variety of existing factors, and it is priced in the cross-section.",
+  "conclusion_sign": "positive",
+  "replicable": "yes",
+  "notes": "Introduced a comprehensive quality factor (QMJ) combining multiple quality characteristics: profitability, growth, safety, and payout. Quality stocks are defined as profitable, stable, growing companies with sound governance. Shows that high-quality stocks outperform low-quality stocks on a risk-adjusted basis globally. The quality factor is distinct from other known factors."
+}
