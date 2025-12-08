@@ -36,13 +36,17 @@ Note: 部門職責請依《company_policy.md》；跨部門流程請依《collab
 
 使用者以 `@{部門名}` 呼叫（以部門為 Agent 名稱）：
 
-- `@Product` — 產品  
-- `@Application` — 應用（前後端、API）  
-- `@Data` — 資料  
-- `@Research` — 研究（因子、策略）  
-- `@Trading` — 交易執行與風控  
-- `@Infrastructure` — 部署、CI/CD、監控  
-- `@Sales` — 對外行銷與溝通  
+| 部門 Agent | 別名 | 職責 |
+|------------|------|------|
+| `@Product` | `@Prod` | 產品 |
+| `@Application` | `@App` | 應用（前後端、API） |
+| `@Data` | — | 資料 |
+| `@Research` | `@Res` | 研究（因子、策略） |
+| `@Trading` | — | 交易執行與風控 |
+| `@Infrastructure` | `@Dev` | 部署、CI/CD、監控 |
+| `@Sales` | — | 對外行銷與溝通 |
+
+> **別名說明**：別名與正式名稱功能完全相同，可互換使用。  
 
 角色模式下：
 
