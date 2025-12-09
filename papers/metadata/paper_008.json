@@ -1,0 +1,14 @@
+{
+  "paper_id": "paper_008",
+  "title": "Factor Momentum and the Momentum Factor",
+  "authors": "Ehsani, Sina; Linnainmaa, Juhani T.",
+  "year": 2019,
+  "journal": "NBER Working Paper",
+  "bibtex": "@techreport{ehsani2019factor,\n  title={Factor Momentum and the Momentum Factor},\n  author={Ehsani, Sina and Linnainmaa, Juhani T.},\n  year={2019},\n  month={February},\n  institution={National Bureau of Economic Research},\n  type={Working Paper},\n  number={25551},\n  url={http://www.nber.org/papers/w25551}\n}",
+  "market": "US",
+  "asset_class": "Equity",
+  "abstract": "Momentum in individual stock returns emanates from momentum in factor returns. Most factors are positively autocorrelated: the average factor earns a monthly return of 1 basis point following a year of losses and 53 basis points following a positive year. Factor momentum explains all forms of individual stock momentum. Stock momentum strategies indirectly time factors: they profit when the factors remain autocorrelated, and crash when these autocorrelations break down. Our key result is that momentum is not a distinct risk factor; it aggregates the autocorrelations found in all other factors.",
+  "conclusion_sign": "positive",
+  "replicable": "yes",
+  "notes": "NBER Working Paper No. 25551. 本文提出 Factor Momentum 概念，認為動量效應來自於因子報酬的自相關性，而非獨立的風險因子。研究涵蓋 20 個因子，發現平均因子在正報酬年度後月報酬 52bp，負報酬年度後僅 2bp。Keywords: factor momentum, momentum factor, autocorrelation, factor returns, time-series momentum."
+}
