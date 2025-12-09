@@ -52,7 +52,7 @@
         "type": {
           "type": "string",
           "description": "Type of formula",
-          "enum": ["ratio", "difference", "percentile", "residual", "rolling", "composite", "other"]
+          "enum": ["ratio", "difference", "percentile", "residual", "rolling", "composite", "return", "growth_rate", "log", "log_change", "product", "other"]
         },
         "numerator": {
           "type": "string",
@@ -86,7 +86,7 @@
     "normalization": {
       "type": "string",
       "description": "Recommended normalization method from literature",
-      "enum": ["zscore_cross_sectional", "zscore_time_series", "rank", "percentile", "winsorize", "none"]
+      "enum": ["zscore_cross_sectional", "zscore_time_series", "rank", "percentile", "winsorize", "log_transform", "none"]
     },
     "original_paper_id": {
       "type": ["string", "null"],
