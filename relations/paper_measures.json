@@ -215,10 +215,26 @@
       "significance": "negative",
       "usage_detail": "60-month market beta used to form decile portfolios, low beta stocks have higher risk-adjusted returns",
       "notes": "Kenneth French Data Library 提供 beta 排序投資組合數據，證實 beta 與報酬關係平坦"
+    },
+    {
+      "paper_id": "paper_010",
+      "measure_id": "VOL_36M",
+      "role": "primary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "36-month volatility as primary risk measure to construct low versus high volatility decile portfolios",
+      "notes": "低波動效應原始論文（2007）：全球低 vs 高波動十分位投資組合年化 alpha 差距達 12%"
+    },
+    {
+      "paper_id": "paper_010",
+      "measure_id": "BETA_60M",
+      "role": "primary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "60-month market beta used to analyze relationship between systematic risk and returns",
+      "notes": "證實低 beta 股票獲得更高風險調整報酬，挑戰 CAPM 理論預測"
     }
   ],
   "metadata": {
-    "version": "1.2",
+    "version": "1.3",
     "last_updated": "2025-12-09",
     "description": "Paper-Measure relationships for FactorBase knowledge graph"
   }

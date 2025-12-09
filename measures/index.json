@@ -59,8 +59,8 @@
       "factor": "Low Volatility",
       "count": 2,
       "measures": [
-        {"measure_id": "VOL_36M", "display_name": "36-Month Volatility", "file": "low_volatility/VOL_36M.json", "original_paper_id": "paper_009"},
-        {"measure_id": "BETA_60M", "display_name": "60-Month Market Beta", "file": "low_volatility/BETA_60M.json", "original_paper_id": null}
+        {"measure_id": "VOL_36M", "display_name": "36-Month Volatility", "file": "low_volatility/VOL_36M.json", "original_paper_id": "paper_010"},
+        {"measure_id": "BETA_60M", "display_name": "60-Month Market Beta", "file": "low_volatility/BETA_60M.json", "original_paper_id": "paper_010"}
       ]
     }
   ]

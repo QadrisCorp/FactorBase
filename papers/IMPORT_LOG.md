@@ -26,6 +26,7 @@
 
 | Date | Paper ID | Title | Authors | Year | Source | Measures Linked | Added By | Status |
 |------|----------|-------|---------|------|--------|-----------------|----------|--------|
+| 2025-12-09 | paper_010 | The Volatility Effect: Lower Risk without Lower Return | Blitz, David C.; van Vliet, Pim | 2007 | PDF | 2 | @Research Agent | ✅ success |
 | 2025-12-09 | paper_009 | The Volatility Effect Revisited | Blitz, van Vliet, Baltussen | 2019 | PDF | 2 | @Research Agent | ✅ success |
 | 2025-12-09 | paper_008 | Factor Momentum and the Momentum Factor | Ehsani, Sina; Linnainmaa, Juhani T. | 2019 | PDF | 5 | @Research Agent | ✅ success |
 
