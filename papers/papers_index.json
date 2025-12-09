@@ -1,4 +1,69 @@
 {
+  "papers": [
+    {
+      "paper_id": "paper_001",
+      "title": "Common risk factors in the returns on stocks and bonds",
+      "authors": "Fama, Eugene F.; French, Kenneth R.",
+      "year": 1993,
+      "local_pdf": null
+    },
+    {
+      "paper_id": "paper_002",
+      "title": "On Persistence in Mutual Fund Performance",
+      "authors": "Carhart, Mark M.",
+      "year": 1997,
+      "local_pdf": null
+    },
+    {
+      "paper_id": "paper_003",
+      "title": "A five-factor asset pricing model",
+      "authors": "Fama, Eugene F.; French, Kenneth R.",
+      "year": 2015,
+      "local_pdf": null
+    },
+    {
+      "paper_id": "paper_004",
+      "title": "The other side of value: The gross profitability premium",
+      "authors": "Novy-Marx, Robert",
+      "year": 2013,
+      "local_pdf": null
+    },
+    {
+      "paper_id": "paper_005",
+      "title": "Digesting anomalies: An investment approach",
+      "authors": "Hou, Kewei; Xue, Chen; Zhang, Lu",
+      "year": 2015,
+      "local_pdf": null
+    },
+    {
+      "paper_id": "paper_006",
+      "title": "Value and Momentum Everywhere",
+      "authors": "Asness, Clifford S.; Moskowitz, Tobias J.; Pedersen, Lasse Heje",
+      "year": 2013,
+      "local_pdf": null
+    },
+    {
+      "paper_id": "paper_007",
+      "title": "Quality Minus Junk",
+      "authors": "Asness, Clifford S.; Frazzini, Andrea; Pedersen, Lasse Heje",
+      "year": 2019,
+      "local_pdf": null
+    },
+    {
+      "paper_id": "paper_008",
+      "title": "Factor Momentum and the Momentum Factor",
+      "authors": "Ehsani, Sina; Linnainmaa, Juhani T.",
+      "year": 2019,
+      "local_pdf": "FACTOR MOMENTUM AND THE MOMENTUM FACTOR.pdf"
+    },
+    {
+      "paper_id": "paper_009",
+      "title": "The Volatility Effect Revisited",
+      "authors": "Blitz, David; van Vliet, Pim; Baltussen, Guido",
+      "year": 2019,
+      "local_pdf": "The Volatility Effect Revisited.pdf"
+    }
+  ],
   "by_id": {
     "1": {
       "paper_id": 1,
@@ -90,6 +155,32 @@
       "conclusion_sign": "positive",
       "replicable": "yes",
       "notes": "Introduced a comprehensive quality factor (QMJ) combining multiple quality characteristics: profitability, growth, safety, and payout. Quality stocks are defined as profitable, stable, growing companies with sound governance. Shows that high-quality stocks outperform low-quality stocks on a risk-adjusted basis globally. The quality factor is distinct from other known factors."
+    },
+    "8": {
+      "paper_id": 8,
+      "title": "Factor Momentum and the Momentum Factor",
+      "authors": "Ehsani, Sina; Linnainmaa, Juhani T.",
+      "year": 2019,
+      "journal": "NBER Working Paper",
+      "market": "US",
+      "asset_class": "Equity",
+      "abstract": "Momentum in individual stock returns emanates from momentum in factor returns.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "NBER Working Paper No. 25551"
+    },
+    "9": {
+      "paper_id": 9,
+      "title": "The Volatility Effect Revisited",
+      "authors": "Blitz, David; van Vliet, Pim; Baltussen, Guido",
+      "year": 2019,
+      "journal": "SSRN Working Paper",
+      "market": "Global",
+      "asset_class": "Equity",
+      "abstract": "High-risk stocks do not have higher returns than low-risk stocks in all major stock markets.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "Robeco team low-risk effect review"
     }
   },
   "by_market": {
@@ -98,11 +189,13 @@
       2,
       3,
       4,
-      5
+      5,
+      8
     ],
     "Global": [
       6,
-      7
+      7,
+      9
     ]
   },
   "by_asset_class": {
@@ -112,7 +205,9 @@
       3,
       4,
       5,
-      7
+      7,
+      8,
+      9
     ],
     "Multi-Asset": [
       6
@@ -134,7 +229,9 @@
       6
     ],
     "2019": [
-      7
+      7,
+      8,
+      9
     ]
   },
   "by_author": {
@@ -174,6 +271,21 @@
     ],
     "Frazzini, Andrea": [
       7
+    ],
+    "Ehsani, Sina": [
+      8
+    ],
+    "Linnainmaa, Juhani T.": [
+      8
+    ],
+    "Blitz, David": [
+      9
+    ],
+    "van Vliet, Pim": [
+      9
+    ],
+    "Baltussen, Guido": [
+      9
     ]
   }
 }

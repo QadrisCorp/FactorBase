@@ -257,6 +257,68 @@
             color: var(--primary);
         }
 
+        /* Download buttons */
+        .btn-download {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-download:hover {
+            background: #16a34a;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .btn-sm {
+            padding: 6px 10px;
+            font-size: 0.75rem;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 100;
+            border-radius: 8px;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: var(--text);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--bg);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-icon {
+            font-size: 1rem;
+        }
+
         /* Modal */
         .modal {
             display: none;
@@ -382,7 +444,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 100px;">操作</th>
+                            <th style="width: 200px;">操作</th>
                             <th>ID</th>
                             <th>標題</th>
                             <th>作者</th>
@@ -473,6 +535,7 @@
         let measuresData = [];
         let paperMeasuresData = [];
         let indexData = null;
+        let localPDFs = [];  // List of available local PDF files
 
         // GitHub raw content base URL (for public repo)
         // For local development, use relative paths
@@ -497,8 +560,17 @@
                 const relData = await relRes.json();
                 paperMeasuresData = relData.paper_measure_links || [];
 
-                // Load all papers
-                const paperIds = ['paper_001', 'paper_002', 'paper_003', 'paper_004', 'paper_005', 'paper_006', 'paper_007'];
+                // Load papers index to get all paper IDs and PDF info
+                const papersIndexRes = await fetch(`${BASE_URL}/papers/papers_index.json`);
+                const papersIndex = await papersIndexRes.json();
+                
+                // Extract local PDF filenames from index
+                localPDFs = papersIndex.papers
+                    .filter(p => p.local_pdf)
+                    .map(p => ({ paper_id: p.paper_id, filename: p.local_pdf }));
+
+                // Load all papers from index
+                const paperIds = papersIndex.papers.map(p => p.paper_id);
                 const paperPromises = paperIds.map(id => 
                     fetch(`${BASE_URL}/papers/metadata/${id}.json`).then(r => r.json()).catch(() => null)
                 );
@@ -560,9 +632,12 @@
             tbody.innerHTML = papersData.map(paper => `
                 <tr>
                     <td>
-                        <button class="btn btn-primary" onclick="showPaperMeasures('${paper.paper_id}')">
-                            查詢 Measures
-                        </button>
+                        <div class="btn-group">
+                            <button class="btn btn-primary btn-sm" onclick="showPaperMeasures('${paper.paper_id}')">
+                                📊 Measures
+                            </button>
+                            ${renderDownloadButton(paper)}
+                        </div>
                     </td>
                     <td><code>${paper.paper_id}</code></td>
                     <td>${truncate(paper.title, 50)}</td>
@@ -571,6 +646,93 @@
                     <td>${truncate(paper.journal, 30)}</td>
                 </tr>
             `).join('');
+        }
+
+        // Render download button based on paper source
+        function renderDownloadButton(paper) {
+            const links = [];
+            
+            // Check for local PDF first (highest priority)
+            const localPDF = localPDFs.find(p => p.paper_id === paper.paper_id);
+            if (localPDF) {
+                const pdfUrl = `${BASE_URL}/papers/raw/${encodeURIComponent(localPDF.filename)}`;
+                links.push({
+                    url: pdfUrl,
+                    label: '本地 PDF',
+                    icon: '📄',
+                    priority: 1
+                });
+            }
+            
+            // arXiv PDF (direct download)
+            if (paper.arxiv_id) {
+                links.push({
+                    url: `https://arxiv.org/pdf/${paper.arxiv_id}.pdf`,
+                    label: 'arXiv PDF',
+                    icon: '📑'
+                });
+                links.push({
+                    url: `https://arxiv.org/abs/${paper.arxiv_id}`,
+                    label: 'arXiv 摘要',
+                    icon: '📝'
+                });
+            }
+            
+            // DOI link
+            if (paper.doi) {
+                links.push({
+                    url: `https://doi.org/${paper.doi}`,
+                    label: 'DOI 連結',
+                    icon: '🔗'
+                });
+            }
+            
+            // SSRN
+            if (paper.ssrn_id) {
+                links.push({
+                    url: `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=${paper.ssrn_id}`,
+                    label: 'SSRN',
+                    icon: '📋'
+                });
+            }
+
+            // NBER
+            if (paper.nber_id) {
+                links.push({
+                    url: `https://www.nber.org/papers/${paper.nber_id}`,
+                    label: 'NBER',
+                    icon: '🏛️'
+                });
+            }
+
+            // If no external links available
+            if (links.length === 0) {
+                return `<button class="btn btn-secondary btn-sm" disabled title="無可用連結">📥 下載</button>`;
+            }
+
+            // Single link - direct button
+            if (links.length === 1) {
+                return `
+                    <a href="${links[0].url}" target="_blank" rel="noopener noreferrer" class="btn btn-download btn-sm" title="${links[0].label}">
+                        ${links[0].icon} 下載
+                    </a>
+                `;
+            }
+
+            // Multiple links - dropdown menu
+            return `
+                <div class="dropdown">
+                    <button class="btn btn-download btn-sm">📥 下載 ▾</button>
+                    <div class="dropdown-content">
+                        ${links.map(link => `
+                            <a href="${link.url}" target="_blank" rel="noopener noreferrer">
+                                <span class="dropdown-icon">${link.icon}</span>
+                                ${link.label}
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
         }
 
         // Render measures table
