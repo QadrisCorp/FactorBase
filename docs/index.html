@@ -404,8 +404,10 @@
         let paperMeasuresData = [];
         let indexData = null;
 
-        // GitHub raw content base URL
-        const BASE_URL = 'https://raw.githubusercontent.com/QadrisCorp/FactorBase/main';
+        // GitHub raw content base URL (for public repo)
+        // For local development, use relative paths
+        const isLocal = window.location.protocol === 'file:' || window.location.hostname === 'localhost';
+        const BASE_URL = isLocal ? '..' : 'https://raw.githubusercontent.com/QadrisCorp/FactorBase/main';
 
         // Initialize
         document.addEventListener('DOMContentLoaded', async () => {
