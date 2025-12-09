@@ -1,13 +1,20 @@
 {
-  "paper_id": 5,
+  "paper_id": "paper_005",
   "title": "Digesting anomalies: An investment approach",
   "authors": "Hou, Kewei; Xue, Chen; Zhang, Lu",
   "year": 2015,
   "journal": "Review of Financial Studies",
+  "volume": "28",
+  "issue": "3",
+  "pages": "650-705",
+  "doi": "10.1093/rfs/hhu068",
+  "arxiv_id": null,
+  "ssrn_id": "1549578",
+  "bibtex": "@article{hou2015digesting,\n  title={Digesting anomalies: An investment approach},\n  author={Hou, Kewei and Xue, Chen and Zhang, Lu},\n  journal={Review of Financial Studies},\n  volume={28},\n  number={3},\n  pages={650--705},\n  year={2015},\n  publisher={Oxford University Press}\n}",
   "market": "US",
   "asset_class": "Equity",
-  "abstract": "We build on the investment approach of Cochrane (1991, 1996) to develop an alternative factor model that uses the market factor, a size factor, an investment factor, and a profitability factor (the q-factor model). The q-factor model largely summarizes the cross-section of average stock returns. A comprehensive examination of nearly 80 anomalies shows that about one-half of the anomalies are insignificant in the broad cross-section of stocks, and the q-factor model fully captures about one-half of the significant anomalies. With the exception of momentum, the q-factor model outperforms the Fama-French three-factor and four-factor models across all the anomalies.",
+  "abstract": "We develop the q-factor model using market, size, investment, and profitability factors. The q-factor model largely summarizes the cross-section of average stock returns.",
   "conclusion_sign": "positive",
   "replicable": "yes",
-  "notes": "Introduced the q-factor model based on investment theory. Uses four factors: Market, Size (ME), Investment (I/A), and Profitability (ROE). Provides a theoretical foundation for factor models based on corporate investment decisions. Successfully explains many anomalies better than traditional models, except momentum."
+  "notes": "Introduced the q-factor model based on investment theory. Uses four factors: Market, Size (ME), Investment (I/A), and Profitability (ROE)."
 }

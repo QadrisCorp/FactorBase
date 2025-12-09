@@ -10,10 +10,8 @@
     "denominator": "revenue_ttm",
     "window": "TTM"
   },
-  "data_source": [
-    "financials.is_quarterly"
-  ],
-  "frequency": "quarterly",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["GM", "Gross Margin"],
   "notes": "毛利率，反映公司產品定價能力與成本控制。常作為 Quality 因子的組成。"
 }

@@ -1,13 +1,20 @@
 {
-  "paper_id": 2,
+  "paper_id": "paper_002",
   "title": "On Persistence in Mutual Fund Performance",
   "authors": "Carhart, Mark M.",
   "year": 1997,
   "journal": "Journal of Finance",
+  "volume": "52",
+  "issue": "1",
+  "pages": "57-82",
+  "doi": "10.1111/j.1540-6261.1997.tb03808.x",
+  "arxiv_id": null,
+  "ssrn_id": null,
+  "bibtex": "@article{carhart1997persistence,\n  title={On persistence in mutual fund performance},\n  author={Carhart, Mark M},\n  journal={Journal of Finance},\n  volume={52},\n  number={1},\n  pages={57--82},\n  year={1997},\n  publisher={Wiley}\n}",
   "market": "US",
   "asset_class": "Equity",
-  "abstract": "This paper examines the consistency and sources of mutual fund performance. Using a sample of 1,892 diversified equity mutual funds from 1962 to 1993, we find that the four-factor model that includes momentum (UMD - Up Minus Down) largely explains persistence in returns. Common factors in stock returns and investment expenses almost completely explain persistence in equity mutual funds' mean and risk-adjusted returns. Hendricks, Patel, and Zeckhauser's (1993) 'hot hands' result is mostly due to the one-year momentum effect of Jegadeesh and Titman (1993).",
+  "abstract": "This paper examines the consistency and sources of mutual fund performance. The four-factor model that includes momentum (UMD) largely explains persistence in returns.",
   "conclusion_sign": "positive",
   "replicable": "yes",
-  "notes": "Extended Fama-French three-factor model by adding momentum factor (UMD). The Carhart four-factor model (Market, Size, Value, Momentum) became a standard benchmark for performance evaluation. Demonstrated that momentum is a persistent factor in stock returns."
+  "notes": "Extended Fama-French three-factor model by adding momentum factor (UMD). The Carhart four-factor model became a standard benchmark for performance evaluation."
 }

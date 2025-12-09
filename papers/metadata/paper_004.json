@@ -1,13 +1,20 @@
 {
-  "paper_id": 4,
+  "paper_id": "paper_004",
   "title": "The other side of value: The gross profitability premium",
   "authors": "Novy-Marx, Robert",
   "year": 2013,
   "journal": "Journal of Financial Economics",
+  "volume": "108",
+  "issue": "1",
+  "pages": "1-28",
+  "doi": "10.1016/j.jfineco.2013.01.003",
+  "arxiv_id": null,
+  "ssrn_id": "1335524",
+  "bibtex": "@article{novymarx2013gross,\n  title={The other side of value: The gross profitability premium},\n  author={Novy-Marx, Robert},\n  journal={Journal of Financial Economics},\n  volume={108},\n  number={1},\n  pages={1--28},\n  year={2013},\n  publisher={Elsevier}\n}",
   "market": "US",
   "asset_class": "Equity",
-  "abstract": "Profitability, measured by gross profits-to-assets, has roughly the same power as book-to-market predicting the cross-section of average returns. Profitable firms generate significantly higher returns than unprofitable firms, despite having significantly higher valuation ratios. Controlling for profitability also dramatically increases the performance of value strategies, especially among the largest, most liquid stocks. These results are difficult to reconcile with popular explanations of the value premium, as profitable firms are less prone to distress, have longer cash-flow durations, and have lower levels of operating leverage.",
+  "abstract": "Profitability, measured by gross profits-to-assets, has roughly the same power as book-to-market predicting the cross-section of average returns.",
   "conclusion_sign": "positive",
   "replicable": "yes",
-  "notes": "Introduced gross profitability as a powerful predictor of stock returns. Gross profitability (revenue minus cost of goods sold, scaled by assets) is cleaner than traditional profitability measures. Combined with value, creates strong factor portfolios. Influenced the development of the Fama-French five-factor model."
+  "notes": "Introduced gross profitability as a powerful predictor of stock returns. Influenced the development of the Fama-French five-factor model."
 }

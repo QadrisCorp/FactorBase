@@ -9,10 +9,8 @@
     "calculation": "ln(market_cap)",
     "window": "current"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes"
-  ],
-  "frequency": "daily",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": "paper_001",
+  "aliases": ["Log ME", "Log Market Cap", "ln(ME)"],
   "notes": "對數市值，常用於迴歸分析。Banz (1981) 最早記錄 Size Effect。"
 }

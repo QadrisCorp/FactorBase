@@ -10,11 +10,8 @@
     "denominator": "total_assets",
     "window": "TTM"
   },
-  "data_source": [
-    "financials.cf_quarterly",
-    "financials.bs_quarterly"
-  ],
-  "frequency": "quarterly",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["CAPEX/TA", "Capital Expenditure Intensity"],
   "notes": "資本支出密度指標。高 CAPEX 公司可能面臨過度投資風險。"
 }

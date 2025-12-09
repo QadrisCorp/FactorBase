@@ -9,10 +9,8 @@
     "calculation": "log(shares_t) - log(shares_t_minus_1)",
     "window": "1Y"
   },
-  "data_source": [
-    "financials.shares_outstanding"
-  ],
-  "frequency": "annual",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["Net Share Issuance", "Equity Issuance"],
   "notes": "Pontiff & Woodgate (2008)。股票發行與未來報酬呈負相關。"
 }

@@ -3,18 +3,15 @@
   "measure_name": "ROE_TTM",
   "display_name": "Return on Equity (TTM)",
   "factor": "Profitability",
-  "description": "Return on Equity using trailing twelve months net income. ROE = Net Income (TTM) / Average Shareholders' Equity. Measures how efficiently a company generates profits from shareholders' equity.",
+  "description": "Return on Equity using trailing twelve months net income. ROE = Net Income (TTM) / Average Shareholders' Equity.",
   "formula": {
     "type": "ratio",
     "numerator": "net_income_ttm",
     "denominator": "avg_shareholders_equity",
     "window": "TTM"
   },
-  "data_source": [
-    "financials.is_quarterly",
-    "financials.bs_quarterly"
-  ],
-  "frequency": "quarterly",
   "normalization": "zscore_cross_sectional",
-  "notes": "核心獲利能力指標，見 Novy-Marx (2013), Fama-French 五因子模型 (2015)。"
+  "original_paper_id": "paper_005",
+  "aliases": ["ROE", "Return on Equity"],
+  "notes": "核心獲利能力指標，見 Novy-Marx (2013), Fama-French 五因子模型 (2015), HXZ q-factor (2015)。"
 }

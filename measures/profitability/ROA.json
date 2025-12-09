@@ -3,18 +3,15 @@
   "measure_name": "ROA_TTM",
   "display_name": "Return on Assets (TTM)",
   "factor": "Profitability",
-  "description": "Return on Assets using trailing twelve months net income. ROA = Net Income (TTM) / Average Total Assets. Measures how efficiently a company uses its assets to generate profits.",
+  "description": "Return on Assets using trailing twelve months net income. ROA = Net Income (TTM) / Average Total Assets.",
   "formula": {
     "type": "ratio",
     "numerator": "net_income_ttm",
     "denominator": "avg_total_assets",
     "window": "TTM"
   },
-  "data_source": [
-    "financials.is_quarterly",
-    "financials.bs_quarterly"
-  ],
-  "frequency": "quarterly",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["ROA", "Return on Assets"],
   "notes": "資產報酬率，不受資本結構影響的獲利指標。"
 }

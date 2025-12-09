@@ -1,13 +1,20 @@
 {
-  "paper_id": 6,
+  "paper_id": "paper_006",
   "title": "Value and Momentum Everywhere",
   "authors": "Asness, Clifford S.; Moskowitz, Tobias J.; Pedersen, Lasse Heje",
   "year": 2013,
   "journal": "Journal of Finance",
+  "volume": "68",
+  "issue": "3",
+  "pages": "929-985",
+  "doi": "10.1111/jofi.12021",
+  "arxiv_id": null,
+  "ssrn_id": "1363476",
+  "bibtex": "@article{asness2013value,\n  title={Value and momentum everywhere},\n  author={Asness, Clifford S and Moskowitz, Tobias J and Pedersen, Lasse Heje},\n  journal={Journal of Finance},\n  volume={68},\n  number={3},\n  pages={929--985},\n  year={2013},\n  publisher={Wiley}\n}",
   "market": "Global",
   "asset_class": "Multi-Asset",
-  "abstract": "We find consistent value and momentum return premia across eight diverse markets and asset classes, and a strong common factor structure among their returns. Value and momentum returns correlate more strongly across asset classes than passive exposures to the asset classes, but value and momentum are negatively correlated with each other, both within and across asset classes. Our evidence suggests that value and momentum returns have a common component across markets and asset classes, consistent with theories based on characteristic risk or market inefficiency, but difficult to reconcile with asset-class-specific characteristics or market frictions.",
+  "abstract": "We find consistent value and momentum return premia across eight diverse markets and asset classes. Value and momentum are negatively correlated with each other.",
   "conclusion_sign": "positive",
   "replicable": "yes",
-  "notes": "Demonstrates that value and momentum factors exist across multiple asset classes (stocks, bonds, currencies, commodities) and geographic markets. Shows value and momentum are negatively correlated with each other. Provides evidence for universal nature of these factors, supporting both risk-based and behavioral explanations."
+  "notes": "Demonstrates that value and momentum factors exist across multiple asset classes and geographic markets."
 }

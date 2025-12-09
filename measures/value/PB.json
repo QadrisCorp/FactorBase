@@ -10,11 +10,8 @@
     "denominator": "book_value_equity",
     "window": "MRQ"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes",
-    "financials.bs_quarterly"
-  ],
-  "frequency": "daily",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": "paper_001",
+  "aliases": ["P/B", "Price-to-Book"],
   "notes": "經典 Value 因子，由 Fama-French (1992, 1993) 研究確立。常以 BM (Book-to-Market) 的倒數形式呈現。"
 }

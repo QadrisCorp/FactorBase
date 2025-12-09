@@ -10,10 +10,8 @@
     "denominator": "total_assets_lag",
     "window": "1Y"
   },
-  "data_source": [
-    "financials.bs_quarterly"
-  ],
-  "frequency": "quarterly",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": "paper_003",
+  "aliases": ["I/A", "Investment-to-Assets"],
   "notes": "Fama-French (2015) 五因子模型 CMA 因子定義。低投資公司傾向有較高報酬。"
 }

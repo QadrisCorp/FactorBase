@@ -1,0 +1,169 @@
+{
+  "paper_measure_links": [
+    {
+      "paper_id": "paper_001",
+      "measure_id": "BM",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "Book-to-market equity used to form high and low BM portfolios (HML factor)",
+      "notes": "用於建構 HML (High Minus Low) 因子"
+    },
+    {
+      "paper_id": "paper_001",
+      "measure_id": "ME",
+      "role": "primary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "Sorted by market equity to form small and big portfolios (SMB factor)",
+      "notes": "用於建構 SMB (Small Minus Big) 因子"
+    },
+    {
+      "paper_id": "paper_001",
+      "measure_id": "PB",
+      "role": "secondary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "Inverse of BM, used in robustness checks",
+      "notes": "BM 的倒數形式"
+    },
+    {
+      "paper_id": "paper_002",
+      "measure_id": "MOM_12M",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "12-month momentum excluding recent month, used to form UMD factor",
+      "notes": "用於建構 UMD (Up Minus Down) 因子"
+    },
+    {
+      "paper_id": "paper_002",
+      "measure_id": "BM",
+      "role": "control_variable",
+      "significance": "positive",
+      "usage_detail": "Included as control in four-factor model",
+      "notes": "四因子模型中的控制變數"
+    },
+    {
+      "paper_id": "paper_002",
+      "measure_id": "ME",
+      "role": "control_variable",
+      "significance": "negative",
+      "usage_detail": "Included as control in four-factor model",
+      "notes": "四因子模型中的控制變數"
+    },
+    {
+      "paper_id": "paper_003",
+      "measure_id": "OP_BE",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "Operating profitability used to form RMW factor",
+      "notes": "用於建構 RMW (Robust Minus Weak) 因子"
+    },
+    {
+      "paper_id": "paper_003",
+      "measure_id": "INV_TA",
+      "role": "primary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "Investment used to form CMA factor",
+      "notes": "用於建構 CMA (Conservative Minus Aggressive) 因子"
+    },
+    {
+      "paper_id": "paper_003",
+      "measure_id": "AG",
+      "role": "secondary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "Asset growth as alternative investment measure",
+      "notes": "作為投資因子的替代指標"
+    },
+    {
+      "paper_id": "paper_003",
+      "measure_id": "BM",
+      "role": "control_variable",
+      "significance": "positive",
+      "usage_detail": "Value factor becomes less important when controlling for profitability and investment",
+      "notes": "控制獲利與投資後，價值因子重要性降低"
+    },
+    {
+      "paper_id": "paper_004",
+      "measure_id": "GP_TA",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "Gross profits-to-assets as main profitability measure",
+      "notes": "毛利對資產比率作為核心獲利指標"
+    },
+    {
+      "paper_id": "paper_004",
+      "measure_id": "BM",
+      "role": "control_variable",
+      "significance": "positive",
+      "usage_detail": "Combined with profitability creates stronger value strategy",
+      "notes": "與獲利因子結合可創造更強的價值策略"
+    },
+    {
+      "paper_id": "paper_005",
+      "measure_id": "ROE_TTM",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "ROE as profitability factor in q-factor model",
+      "notes": "q-factor 模型中的獲利因子"
+    },
+    {
+      "paper_id": "paper_005",
+      "measure_id": "INV_TA",
+      "role": "primary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "Investment-to-assets as investment factor in q-factor model",
+      "notes": "q-factor 模型中的投資因子 (I/A)"
+    },
+    {
+      "paper_id": "paper_005",
+      "measure_id": "ME",
+      "role": "primary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "Size factor in q-factor model",
+      "notes": "q-factor 模型中的規模因子"
+    },
+    {
+      "paper_id": "paper_006",
+      "measure_id": "BM",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "Value measure across multiple asset classes",
+      "notes": "跨資產類別的價值指標"
+    },
+    {
+      "paper_id": "paper_006",
+      "measure_id": "MOM_12M",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "Momentum measure across multiple asset classes",
+      "notes": "跨資產類別的動能指標"
+    },
+    {
+      "paper_id": "paper_007",
+      "measure_id": "GP_TA",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "Profitability component of quality factor",
+      "notes": "品質因子中的獲利組成"
+    },
+    {
+      "paper_id": "paper_007",
+      "measure_id": "ROE_TTM",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "Alternative profitability measure in quality definition",
+      "notes": "品質定義中的替代獲利指標"
+    },
+    {
+      "paper_id": "paper_007",
+      "measure_id": "GM_TTM",
+      "role": "secondary_sorting_variable",
+      "significance": "positive",
+      "usage_detail": "Gross margin as quality characteristic",
+      "notes": "毛利率作為品質特徵"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-12-09",
+    "description": "Paper-Measure relationships for FactorBase knowledge graph"
+  }
+}

@@ -10,11 +10,8 @@
     "denominator": "market_value_equity",
     "window": "TTM"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes",
-    "financials.cf_quarterly"
-  ],
-  "frequency": "daily",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["C/P", "Cash Flow Yield"],
   "notes": "現金流基礎的價值指標，較不易被會計操縱。參考 Lakonishok, Shleifer, Vishny (1994)。"
 }

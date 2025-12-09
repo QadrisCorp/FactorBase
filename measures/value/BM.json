@@ -10,11 +10,8 @@
     "denominator": "market_value_equity",
     "window": "MRQ"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes",
-    "financials.bs_quarterly"
-  ],
-  "frequency": "daily",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": "paper_001",
+  "aliases": ["B/M", "Book-to-Market"],
   "notes": "Fama-French 三因子模型中 HML 因子的核心 sorting variable。見 Fama-French (1993)。"
 }

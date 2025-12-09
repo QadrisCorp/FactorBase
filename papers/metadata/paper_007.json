@@ -1,13 +1,20 @@
 {
-  "paper_id": 7,
+  "paper_id": "paper_007",
   "title": "Quality Minus Junk",
   "authors": "Asness, Clifford S.; Frazzini, Andrea; Pedersen, Lasse Heje",
   "year": 2019,
   "journal": "Review of Accounting Studies",
+  "volume": "24",
+  "issue": "1",
+  "pages": "34-112",
+  "doi": "10.1007/s11142-018-9470-2",
+  "arxiv_id": null,
+  "ssrn_id": "2312432",
+  "bibtex": "@article{asness2019quality,\n  title={Quality minus junk},\n  author={Asness, Clifford S and Frazzini, Andrea and Pedersen, Lasse Heje},\n  journal={Review of Accounting Studies},\n  volume={24},\n  number={1},\n  pages={34--112},\n  year={2019},\n  publisher={Springer}\n}",
   "market": "Global",
   "asset_class": "Equity",
-  "abstract": "We define a quality security as one that has characteristics that, all-else-equal, an investor should be willing to pay a higher price for: stocks that are safe, profitable, growing, and well managed. High-quality stocks do have higher prices on average, but not by a lot. A portfolio that is long quality stocks and short junk stocks earns significant risk-adjusted returns in the U.S. and globally across 24 countries. The quality-minus-junk (QMJ) factor is not subsumed by a wide variety of existing factors, and it is priced in the cross-section.",
+  "abstract": "We define a quality security as one that is safe, profitable, growing, and well managed. High-quality stocks outperform low-quality stocks on a risk-adjusted basis globally.",
   "conclusion_sign": "positive",
   "replicable": "yes",
-  "notes": "Introduced a comprehensive quality factor (QMJ) combining multiple quality characteristics: profitability, growth, safety, and payout. Quality stocks are defined as profitable, stable, growing companies with sound governance. Shows that high-quality stocks outperform low-quality stocks on a risk-adjusted basis globally. The quality factor is distinct from other known factors."
+  "notes": "Introduced a comprehensive quality factor (QMJ) combining profitability, growth, safety, and payout characteristics."
 }

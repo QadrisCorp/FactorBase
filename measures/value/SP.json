@@ -10,11 +10,8 @@
     "denominator": "market_value_equity",
     "window": "TTM"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes",
-    "financials.is_quarterly"
-  ],
-  "frequency": "daily",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["S/P", "Sales Yield", "Revenue to Price"],
   "notes": "營收基礎的價值指標，適用於虧損公司的估值比較。"
 }

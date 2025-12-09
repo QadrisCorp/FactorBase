@@ -1,13 +1,20 @@
 {
-  "paper_id": 3,
+  "paper_id": "paper_003",
   "title": "A five-factor asset pricing model",
   "authors": "Fama, Eugene F.; French, Kenneth R.",
   "year": 2015,
   "journal": "Journal of Financial Economics",
+  "volume": "116",
+  "issue": "1",
+  "pages": "1-22",
+  "doi": "10.1016/j.jfineco.2014.10.010",
+  "arxiv_id": null,
+  "ssrn_id": "2287202",
+  "bibtex": "@article{fama2015five,\n  title={A five-factor asset pricing model},\n  author={Fama, Eugene F and French, Kenneth R},\n  journal={Journal of Financial Economics},\n  volume={116},\n  number={1},\n  pages={1--22},\n  year={2015},\n  publisher={Elsevier}\n}",
   "market": "US",
   "asset_class": "Equity",
-  "abstract": "A five-factor model directed at capturing the size, value, profitability, and investment patterns in average stock returns performs better than the three-factor model of Fama and French (1993). The five-factor model's main problem is its failure to capture the low average returns on small stocks whose returns behave like those of firms that invest a lot despite low profitability. The model's performance is not sensitive to the way its factors are defined. With the addition of profitability and investment factors, the value factor of the three-factor model becomes redundant for describing average returns in the sample we examine.",
+  "abstract": "A five-factor model directed at capturing the size, value, profitability, and investment patterns in average stock returns performs better than the three-factor model.",
   "conclusion_sign": "positive",
   "replicable": "yes",
-  "notes": "Extended the three-factor model to five factors by adding profitability (RMW - Robust Minus Weak) and investment (CMA - Conservative Minus Aggressive) factors. Shows that profitability and investment patterns are priced in stock returns. The value factor (HML) becomes less important when profitability and investment are controlled."
+  "notes": "Extended the three-factor model to five factors by adding profitability (RMW) and investment (CMA) factors."
 }

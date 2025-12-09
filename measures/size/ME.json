@@ -9,10 +9,8 @@
     "calculation": "price * shares_outstanding",
     "window": "current"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes"
-  ],
-  "frequency": "daily",
   "normalization": "log_transform",
+  "original_paper_id": "paper_001",
+  "aliases": ["Market Cap", "Market Value", "MV"],
   "notes": "Fama-French (1992, 1993) SMB 因子的核心 sorting variable。通常使用 log(ME) 進行分析。"
 }

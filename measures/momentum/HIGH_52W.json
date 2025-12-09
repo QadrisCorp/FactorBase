@@ -10,10 +10,8 @@
     "denominator": "52_week_high_price",
     "window": "52W"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes"
-  ],
-  "frequency": "daily",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["52W High", "Nearness to 52W High"],
   "notes": "52 週高點比率，見 George & Hwang (2004)。作為動能的替代指標。"
 }

@@ -1,6 +1,6 @@
 # QadrisCorp — FactorBase Copilot Instructions
-Version: 1.0  
-Last Updated: 2025-12-05  
+Version: 2.0  
+Last Updated: 2025-12-09  
 Scope: 本文件為「FactorBase 專案專用」的 Copilot 行為規範。  
 All Copilot outputs must follow QadrisCorp's global governance and this project's rules.
 
@@ -9,14 +9,22 @@ All Copilot outputs must follow QadrisCorp's global governance and this project'
 # 1. Project Summary（專案摘要）
 
 **專案名稱：** FactorBase  
-**專案目的：** 系統化整理所有因子文獻、因子定義與 measure 計算方法的知識庫，提供研究、回測、系統開發與 AI Agent 的共同資料來源（Single Source of Truth）。
+**專案目的：** 作為 Qadris Factor System 四層架構中的「文獻概念層」（Concept Layer），系統化整理因子文獻與概念定義的知識圖譜（Knowledge Graph）。
+
+**四層架構定位：**
+| 層級 | Repository | 職責 |
+|:-----|:-----------|:-----|
+| 1️⃣ | **FactorBase** | 文獻概念層 — 純知識圖譜（本專案） |
+| 2️⃣ | MeasureRetriever | 實作層 — 公司級公式庫 |
+| 3️⃣ | FactorBackTest | 執行層 — Stateless 回測引擎 |
+| 4️⃣ | QadrisFactorBase | 產品層 — Metadata 中心與整合 |
 
 **主要功能或目標：**
 - 收集並結構化整理所有因子相關文獻（Papers）
 - 定義標準化的因子分類（Factors）
-- 統一定義各種 measure（Measures）
+- 定義「概念層」的 Measure（Concept Measures）— 僅描述學術定義，不含實作細節
 - 建立文獻與 measure 的關聯地圖（PaperMeasures）
-- 提供 API / DB / JSON 介面供各團隊與 Copilot 使用
+- 提供 JSON 介面供 QadrisFactorBase 與 Copilot Agents 使用
 
 **專案 Owner Team：** Research  
 **Supporting Teams：** Data, Application
@@ -109,27 +117,59 @@ FactorBase/
 
 # 4. Project-specific Rules（本專案專屬規則）
 
-## 4.1 專案開發限制
+## 4.1 FactorBase 職責邊界
 
-- 本專案的 **measure 定義必須包含完整欄位**：
-  - `measure_id`：唯一識別碼
-  - `factor`：所屬因子
-  - `formula`：計算公式（含 type、分子、分母、時間窗）
-  - `data_source`：資料來源
-  - `frequency`：更新頻率
-  - `normalization`：標準化方式
-- 本專案 **不可自行定義新的底層資料欄位**（需透過 Data Team）
-- 本專案 **measure_id / measure_name 必須與 MeasureDefinitionManager 對應**
-- Paper metadata **必須包含**：title, authors, year, market, conclusion_sign, replicable
+**✅ FactorBase 負責（概念層）：**
+- Paper：研究來源（標題、作者、年份、DOI、BibTeX 等）
+- Factor：因子概念歸類（Value, Momentum, Profitability 等）
+- Concept Measure：文獻中描述的衡量方式定義（PB, EP, BM, Mom12-1 等）
+- Paper–Measure：紀錄特定研究使用了哪些 Concept Measure
 
-## 4.2 專案行為規範
+**❌ FactorBase 明確排除（屬於 MeasureRetriever 實作層）：**
+- 資料表與欄位 Mapping（如 `marketstddb.xxx`）
+- 實際計算邏輯（Winsorization, 標準化程式碼等）
+- 市場特定參數設定
+- 更新頻率設定（daily/monthly 等由實作層決定）
 
-- 所有 measure JSON 必須符合 FactorBase-implement.md 定義的格式
-- 所有 paper metadata JSON 必須符合 FactorBase-implement.md 定義的格式
-- 新增 measure 時需標註文獻來源（paper_id）
-- 新增 paper 時需標註使用的 measure 與 factor
+## 4.2 Paper 欄位規範
 
-## 4.3 因子分類標準（Factors Taxonomy）
+Paper metadata **必須包含**：
+- `paper_id`：唯一識別碼
+- `title`：論文標題
+- `authors`：作者（分號分隔）
+- `year`：發表年份
+- `journal`：期刊名稱
+- `doi`：DOI 識別碼（可為 null）
+- `arxiv_id`：arXiv ID（可為 null）
+- `ssrn_id`：SSRN ID（可為 null）
+- `bibtex`：BibTeX 引用格式
+- `market`：研究市場（US, TW, Global 等）
+- `asset_class`：資產類別
+- `conclusion_sign`：結論方向（positive, negative, mixed, none）
+- `replicable`：可複製性（yes, no, unknown）
+
+## 4.3 Concept Measure 欄位規範
+
+Measure 定義 **應包含**（概念層）：
+- `measure_id`：唯一識別碼
+- `measure_name`：Measure 名稱
+- `display_name`：顯示名稱
+- `factor`：所屬因子
+- `description`：文字描述
+- `formula`：計算公式定義
+  - `type`：公式類型（ratio, difference, percentile 等）
+  - `numerator`：分子（概念名稱）
+  - `denominator`：分母（概念名稱）
+  - `window`：時間窗口（TTM, MRQ, 12M 等）— 依論文定義
+- `normalization`：標準化方式（論文建議）
+- `original_paper_id`：首次定義此 measure 的論文
+- `notes`：學術備註
+
+Measure 定義 **不應包含**（屬 MeasureRetriever）：
+- ❌ `data_source`：實際資料表名稱
+- ❌ `frequency`：更新頻率（daily/monthly）
+
+## 4.4 因子分類標準（Factors Taxonomy）
 
 本專案採用以下核心因子分類：
 
@@ -159,39 +199,69 @@ FactorBase/
 
 ## 5.2 JSON 定義檔
 
-**Measure JSON 範例：**
+**Measure JSON 範例（概念層）：**
 ```json
 {
-  "measure_id": "PB",
+  "measure_id": "BM",
+  "measure_name": "BM",
+  "display_name": "Book to Market Ratio",
   "factor": "Value",
-  "description": "Price to Book ratio = Market cap / Book equity",
+  "description": "Book to Market ratio = Book value of equity / Market capitalization. Higher BM indicates value stocks.",
   "formula": {
     "type": "ratio",
-    "numerator": "market_value_equity",
-    "denominator": "book_value_equity",
+    "numerator": "book_value_equity",
+    "denominator": "market_value_equity",
     "window": "MRQ"
   },
-  "data_source": ["marketstddb.md_ta_dailyquotes", "financials.bs_quarterly"],
-  "frequency": "daily",
   "normalization": "zscore_cross_sectional",
-  "notes": "常用於 Value 因子排序"
+  "original_paper_id": "paper_001",
+  "notes": "Fama-French 三因子模型中 HML 因子的核心 sorting variable。見 Fama-French (1993)。"
 }
 ```
 
-**Paper JSON 範例：**
+**Paper JSON 範例（含 DOI/BibTeX）：**
 ```json
 {
-  "paper_id": 1,
+  "paper_id": "paper_001",
   "title": "Common risk factors in the returns on stocks and bonds",
   "authors": "Fama, Eugene F.; French, Kenneth R.",
   "year": 1993,
   "journal": "Journal of Financial Economics",
+  "volume": "33",
+  "issue": "1",
+  "pages": "3-56",
+  "doi": "10.1016/0304-405X(93)90023-5",
+  "arxiv_id": null,
+  "ssrn_id": null,
+  "bibtex": "@article{fama1993common,\n  title={Common risk factors in the returns on stocks and bonds},\n  author={Fama, Eugene F and French, Kenneth R},\n  journal={Journal of Financial Economics},\n  volume={33},\n  number={1},\n  pages={3--56},\n  year={1993},\n  publisher={Elsevier}\n}",
   "market": "US",
   "asset_class": "Equity",
-  "abstract": "...",
+  "abstract": "This paper identifies five common risk factors...",
   "conclusion_sign": "positive",
   "replicable": "yes",
-  "notes": ""
+  "notes": "Seminal paper introducing the three-factor model."
+}
+```
+
+**Paper-Measure 關聯 JSON 範例：**
+```json
+{
+  "paper_measure_links": [
+    {
+      "paper_id": "paper_001",
+      "measure_id": "BM",
+      "role": "primary_sorting_variable",
+      "significance": "positive",
+      "notes": "用於建構 HML 因子"
+    },
+    {
+      "paper_id": "paper_001",
+      "measure_id": "ME",
+      "role": "primary_sorting_variable",
+      "significance": "negative",
+      "notes": "用於建構 SMB 因子"
+    }
+  ]
 }
 ```
 
@@ -321,6 +391,12 @@ pytest tests/test_import_measure.py
 
 # Changelog
 
+- 2.0 — 2025-12-09: 配合 QadrisFactorBase 四層架構重新定義
+  - 新增四層架構說明與職責邊界
+  - Paper JSON 新增 DOI / arXiv / SSRN / BibTeX 欄位
+  - Measure JSON 移除 data_source / frequency（移至 MeasureRetriever）
+  - 新增 Paper-Measure 關聯 JSON 範例
+  - 新增 original_paper_id 欄位
 - 1.0 — 2025-12-05: 建立本專案初始 Copilot Instructions。
 
 ---

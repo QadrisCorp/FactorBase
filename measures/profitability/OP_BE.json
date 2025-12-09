@@ -10,11 +10,8 @@
     "denominator": "book_value_equity",
     "window": "TTM"
   },
-  "data_source": [
-    "financials.is_quarterly",
-    "financials.bs_quarterly"
-  ],
-  "frequency": "quarterly",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": "paper_003",
+  "aliases": ["OP/BE", "Operating Profitability to Book Equity"],
   "notes": "Fama-French (2015) 五因子模型中 RMW (Robust Minus Weak) 因子的定義。"
 }

@@ -8,12 +8,10 @@
     "type": "return",
     "calculation": "(price_t_minus_1 / price_t_minus_12) - 1",
     "window": "12M",
-    "skip_recent": "1M"
+    "lag": "1M"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes"
-  ],
-  "frequency": "monthly",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": "paper_002",
+  "aliases": ["12M Momentum", "MOM12", "UMD"],
   "notes": "經典動能因子，由 Jegadeesh & Titman (1993) 確立。Carhart (1997) 將其納入四因子模型。"
 }

@@ -8,12 +8,10 @@
     "type": "return",
     "calculation": "(price_t / price_t_minus_1) - 1",
     "window": "1M",
-    "skip_recent": "0"
+    "lag": "0"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes"
-  ],
-  "frequency": "monthly",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["1M Return", "Short-term Reversal", "STR"],
   "notes": "短期反轉效應，見 Jegadeesh (1990)。通常作為控制變數使用。"
 }

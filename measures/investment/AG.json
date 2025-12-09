@@ -10,10 +10,8 @@
     "denominator": "total_assets_lag",
     "window": "1Y"
   },
-  "data_source": [
-    "financials.bs_quarterly"
-  ],
-  "frequency": "quarterly",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": "paper_003",
+  "aliases": ["Asset Growth", "Total Asset Growth"],
   "notes": "Cooper, Gulen, Schill (2008) Asset Growth Effect。Fama-French (2015) CMA 因子的核心組成。"
 }

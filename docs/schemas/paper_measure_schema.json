@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://qadris.com/schemas/factorbase/paper_measure.json",
+  "title": "FactorBase Paper-Measure Relation Schema",
+  "description": "JSON Schema for paper-measure relationships in FactorBase",
+  "type": "object",
+  "required": ["paper_measure_links"],
+  "properties": {
+    "paper_measure_links": {
+      "type": "array",
+      "description": "Array of paper-measure relationships",
+      "items": {
+        "type": "object",
+        "required": ["paper_id", "measure_id", "role"],
+        "properties": {
+          "paper_id": {
+            "type": "string",
+            "description": "Reference to paper",
+            "pattern": "^paper_[0-9]{3,}$"
+          },
+          "measure_id": {
+            "type": "string",
+            "description": "Reference to measure"
+          },
+          "role": {
+            "type": "string",
+            "description": "Role of this measure in the paper",
+            "enum": [
+              "primary_sorting_variable",
+              "secondary_sorting_variable",
+              "control_variable",
+              "risk_factor",
+              "dependent_variable",
+              "instrument",
+              "other"
+            ]
+          },
+          "significance": {
+            "type": "string",
+            "description": "Statistical significance direction of findings",
+            "enum": ["positive", "negative", "insignificant", "mixed", "not_tested"]
+          },
+          "usage_detail": {
+            "type": "string",
+            "description": "Detailed description of how the measure was used"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional notes"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  }
+}

@@ -8,12 +8,10 @@
     "type": "return",
     "calculation": "(price_t_minus_1 / price_t_minus_6) - 1",
     "window": "6M",
-    "skip_recent": "1M"
+    "lag": "1M"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes"
-  ],
-  "frequency": "monthly",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["6M Momentum", "MOM6"],
   "notes": "中期動能指標，常與 12M 動能搭配使用。"
 }

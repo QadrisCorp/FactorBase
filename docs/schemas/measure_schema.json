@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://qadris.com/schemas/factorbase/measure.json",
+  "title": "FactorBase Concept Measure Schema",
+  "description": "JSON Schema for concept measure definitions in FactorBase (Concept Layer). Note: This schema excludes implementation details like data_source and frequency, which belong to MeasureRetriever.",
+  "type": "object",
+  "required": [
+    "measure_id",
+    "measure_name",
+    "factor",
+    "description",
+    "formula"
+  ],
+  "properties": {
+    "measure_id": {
+      "type": "string",
+      "description": "Unique identifier for the measure (e.g., 'BM', 'EP', 'MOM_12M')",
+      "pattern": "^[A-Z][A-Z0-9_]*$"
+    },
+    "measure_name": {
+      "type": "string",
+      "description": "Short name of the measure"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Human-readable display name"
+    },
+    "factor": {
+      "type": "string",
+      "description": "Factor category this measure belongs to",
+      "enum": [
+        "Value",
+        "Size",
+        "Momentum",
+        "Profitability",
+        "Investment",
+        "Quality",
+        "Low Volatility",
+        "Liquidity",
+        "Sentiment"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the measure and its academic definition"
+    },
+    "formula": {
+      "type": "object",
+      "description": "Formula definition as described in academic literature",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of formula",
+          "enum": ["ratio", "difference", "percentile", "residual", "rolling", "composite", "other"]
+        },
+        "numerator": {
+          "type": "string",
+          "description": "Conceptual numerator (e.g., 'book_value_equity')"
+        },
+        "denominator": {
+          "type": "string",
+          "description": "Conceptual denominator (e.g., 'market_value_equity')"
+        },
+        "window": {
+          "type": "string",
+          "description": "Time window as defined in literature (e.g., 'TTM', 'MRQ', '12M', '36M')"
+        },
+        "components": {
+          "type": "array",
+          "description": "For composite measures, list of component measures",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lag": {
+          "type": "string",
+          "description": "Lag period if applicable (e.g., '1M' for momentum skip month)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional formula notes"
+        }
+      }
+    },
+    "normalization": {
+      "type": "string",
+      "description": "Recommended normalization method from literature",
+      "enum": ["zscore_cross_sectional", "zscore_time_series", "rank", "percentile", "winsorize", "none"]
+    },
+    "original_paper_id": {
+      "type": ["string", "null"],
+      "description": "Paper ID that first defined this measure",
+      "pattern": "^paper_[0-9]{3,}$"
+    },
+    "aliases": {
+      "type": "array",
+      "description": "Alternative names for this measure in literature",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Academic notes and references"
+    }
+  },
+  "additionalProperties": false,
+  "$comment": "IMPORTANT: This schema intentionally EXCLUDES 'data_source' and 'frequency' fields. These implementation details belong to MeasureRetriever (Layer 2), not FactorBase (Layer 1 - Concept Layer)."
+}

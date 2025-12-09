@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://qadris.com/schemas/factorbase/paper.json",
+  "title": "FactorBase Paper Schema",
+  "description": "JSON Schema for paper metadata in FactorBase (Concept Layer)",
+  "type": "object",
+  "required": [
+    "paper_id",
+    "title",
+    "authors",
+    "year",
+    "market",
+    "asset_class",
+    "conclusion_sign",
+    "replicable"
+  ],
+  "properties": {
+    "paper_id": {
+      "type": "string",
+      "description": "Unique identifier for the paper (e.g., 'paper_001')",
+      "pattern": "^paper_[0-9]{3,}$"
+    },
+    "title": {
+      "type": "string",
+      "description": "Full title of the paper",
+      "minLength": 1
+    },
+    "authors": {
+      "type": "string",
+      "description": "Authors separated by semicolons (e.g., 'Fama, Eugene F.; French, Kenneth R.')"
+    },
+    "year": {
+      "type": "integer",
+      "description": "Publication year",
+      "minimum": 1900,
+      "maximum": 2100
+    },
+    "journal": {
+      "type": "string",
+      "description": "Journal name where the paper was published"
+    },
+    "volume": {
+      "type": "string",
+      "description": "Journal volume number"
+    },
+    "issue": {
+      "type": "string",
+      "description": "Journal issue number"
+    },
+    "pages": {
+      "type": "string",
+      "description": "Page range (e.g., '3-56')"
+    },
+    "doi": {
+      "type": ["string", "null"],
+      "description": "Digital Object Identifier",
+      "pattern": "^10\\..+/.+$"
+    },
+    "arxiv_id": {
+      "type": ["string", "null"],
+      "description": "arXiv preprint ID (e.g., '2101.12345')"
+    },
+    "ssrn_id": {
+      "type": ["string", "null"],
+      "description": "SSRN paper ID"
+    },
+    "bibtex": {
+      "type": ["string", "null"],
+      "description": "BibTeX citation format for the paper"
+    },
+    "market": {
+      "type": "string",
+      "description": "Research market scope",
+      "enum": ["US", "TW", "JP", "CN", "EU", "UK", "Global", "Asia", "Emerging", "Other"]
+    },
+    "asset_class": {
+      "type": "string",
+      "description": "Asset class studied",
+      "enum": ["Equity", "Bond", "FX", "Commodity", "Derivatives", "Multi-Asset", "Other"]
+    },
+    "abstract": {
+      "type": "string",
+      "description": "Paper abstract"
+    },
+    "conclusion_sign": {
+      "type": "string",
+      "description": "Direction of main findings",
+      "enum": ["positive", "negative", "mixed", "none"]
+    },
+    "replicable": {
+      "type": "string",
+      "description": "Whether the study is replicable",
+      "enum": ["yes", "no", "unknown"]
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the paper"
+    }
+  },
+  "additionalProperties": false
+}

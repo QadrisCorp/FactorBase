@@ -10,11 +10,8 @@
     "denominator": "market_value_equity",
     "window": "TTM"
   },
-  "data_source": [
-    "marketstddb.md_ta_dailyquotes",
-    "financials.is_quarterly"
-  ],
-  "frequency": "daily",
   "normalization": "zscore_cross_sectional",
+  "original_paper_id": null,
+  "aliases": ["E/P", "Earnings Yield"],
   "notes": "EP 為 PE 的倒數，避免負值 PE 的問題。常見於 Basu (1977), Fama-French (1992) 等研究。"
 }
