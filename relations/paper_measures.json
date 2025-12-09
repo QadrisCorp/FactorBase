@@ -199,10 +199,26 @@
       "significance": "positive",
       "usage_detail": "SMB factor autocorrelation analyzed",
       "notes": "分析 SMB 因子的自相關性"
+    },
+    {
+      "paper_id": "paper_009",
+      "measure_id": "VOL_36M",
+      "role": "primary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "36-month volatility used to sort stocks into deciles, lower volatility stocks outperform",
+      "notes": "低波動股票獲得更高風險調整報酬，與 CAPM 預測相反"
+    },
+    {
+      "paper_id": "paper_009",
+      "measure_id": "BETA_60M",
+      "role": "primary_sorting_variable",
+      "significance": "negative",
+      "usage_detail": "60-month market beta used to form decile portfolios, low beta stocks have higher risk-adjusted returns",
+      "notes": "Kenneth French Data Library 提供 beta 排序投資組合數據，證實 beta 與報酬關係平坦"
     }
   ],
   "metadata": {
-    "version": "1.1",
+    "version": "1.2",
     "last_updated": "2025-12-09",
     "description": "Paper-Measure relationships for FactorBase knowledge graph"
   }

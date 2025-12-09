@@ -1,0 +1,17 @@
+{
+  "measure_id": "BETA_60M",
+  "measure_name": "BETA_60M",
+  "display_name": "60-Month Market Beta",
+  "factor": "Low Volatility",
+  "description": "Market beta estimated from 60-month regression of stock returns against market returns. CAPM predicts higher beta should yield higher returns, but empirical evidence shows a flat or even inverted relationship.",
+  "formula": {
+    "type": "rolling",
+    "metric": "regression_beta",
+    "base": "monthly_returns_vs_market",
+    "window": "60M"
+  },
+  "normalization": "none",
+  "original_paper_id": null,
+  "aliases": ["Market Beta", "Systematic Risk", "CAPM Beta"],
+  "notes": "Black, Jensen & Scholes (1972) 及 Fama & French (1992) 發現 beta 與報酬的關係遠比 CAPM 預測的平坦。Kenneth French Data Library 提供 60 個月 beta 排序的投資組合數據。"
+}
