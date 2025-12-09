@@ -1,5 +1,5 @@
 # QadrisCorp — FactorBase Copilot Instructions
-Version: 2.0  
+Version: 2.1  
 Last Updated: 2025-12-09  
 Scope: 本文件為「FactorBase 專案專用」的 Copilot 行為規範。  
 All Copilot outputs must follow QadrisCorp's global governance and this project's rules.
@@ -87,27 +87,31 @@ FastAPI endpoints (第三階段)
 FactorBase/
 ├── README.md                     # 專案總說明
 ├── papers/                       # 論文相關資料
-│   ├── raw_pdf/                  # 原始 PDF
-│   └── metadata/                 # paper_{id}.json / yaml
+│   ├── raw/                      # 原始 PDF 檔案
+│   ├── metadata/                 # paper_{id}.json
+│   └── IMPORT_LOG.md             # 論文新增紀錄 Log
 ├── factors/                      # 因子分類與說明
 │   └── factors.json
 ├── measures/                     # measure 定義標準化 JSON
+│   ├── index.json                # Measure 索引
 │   ├── value/
 │   ├── momentum/
 │   ├── profitability/
-│   └── investment/
+│   ├── investment/
+│   └── size/
 ├── relations/                    # 論文 × measure 關聯
 │   └── paper_measures.json
-├── sql/                          # 資料庫 Schema
-│   └── create_tables.sql
 ├── scripts/                      # Python 腳本
-│   ├── import_paper.py
-│   ├── import_measure.py
-│   ├── link_paper_measure.py
-│   └── export_api_schema.py
-├── tests/                        # 測試程式碼
+│   ├── query_factorbase.py       # 查詢工具
+│   ├── validate_json.py          # JSON 驗證工具
 │   └── ...
 ├── docs/                         # 文件目錄
+│   ├── index.html                # GitHub Pages 靜態網頁
+│   └── schemas/                  # JSON Schema 定義
+│       ├── paper_schema.json
+│       ├── measure_schema.json
+│       └── paper_measure_schema.json
+├── tests/                        # 測試程式碼
 │   └── ...
 └── .github/
     └── copilot-instructions.md   # 本文件
@@ -280,8 +284,8 @@ Measure 定義 **不應包含**（屬 MeasureRetriever）：
 1. 若使用者說「新增 measure」  
    → 需產生符合本專案格式的 JSON，並提醒需標註文獻來源。
 
-2. 若使用者說「新增論文」  
-   → 需產生 paper metadata JSON，並詢問該論文使用的 factors / measures。
+2. 若使用者說「新增論文」或上傳 PDF  
+   → 執行 **Section 6.1 新增論文標準流程**。
 
 3. 若需求涉及 **資料欄位定義**  
    → 提醒：需向 @Data 部門提出正式 Request。
@@ -294,6 +298,136 @@ Measure 定義 **不應包含**（屬 MeasureRetriever）：
 
 6. 若需求缺乏資訊  
    → 回覆需要補充的項目（清單化）。
+
+---
+
+## 6.1 新增論文標準流程（Paper Import Workflow）
+
+當使用者上傳 PDF 或要求新增論文時，Copilot **必須**依照以下流程執行：
+
+### Step 1: 解析論文資訊
+
+從 PDF 或使用者提供的資訊中提取：
+- 標題（title）
+- 作者（authors）
+- 年份（year）
+- 期刊/來源（journal）
+- DOI / NBER / SSRN / arXiv ID
+- 摘要（abstract）
+- 研究市場（market）
+- 結論方向（conclusion_sign）
+
+### Step 2: 產生 Paper ID
+
+```bash
+# 查詢目前最後的 paper_id
+ls papers/metadata/ | sort | tail -1
+# 新 paper_id = paper_{last_number + 1}
+```
+
+### Step 3: 建立 Paper JSON
+
+建立 `papers/metadata/paper_XXX.json`，格式需符合 Section 5.2 範例。
+
+**必填欄位：**
+- paper_id, title, authors, year, market, asset_class, conclusion_sign, replicable
+
+**選填欄位：**
+- journal, volume, issue, pages, doi, arxiv_id, ssrn_id, bibtex, abstract, notes
+
+### Step 4: 識別關聯 Measures
+
+分析論文內容，識別使用的 Measures：
+- 檢查是否使用現有 Measures（查詢 `measures/index.json`）
+- 若有新 Measure，需先建立 Measure JSON
+
+### Step 5: 更新 Paper-Measure 關聯
+
+更新 `relations/paper_measures.json`，新增關聯記錄：
+
+```json
+{
+  "paper_id": "paper_XXX",
+  "measure_id": "MEASURE_ID",
+  "role": "primary_sorting_variable|secondary_sorting_variable|control_variable|other",
+  "significance": "positive|negative|mixed|none",
+  "usage_detail": "描述論文如何使用此 measure",
+  "notes": "備註"
+}
+```
+
+**Role 允許值：**
+- `primary_sorting_variable`：主要排序變數
+- `secondary_sorting_variable`：次要排序變數
+- `control_variable`：控制變數
+- `risk_factor`：風險因子
+- `dependent_variable`：依變數
+- `instrument`：工具變數
+- `other`：其他用途
+
+### Step 6: 驗證 JSON 格式
+
+```bash
+python scripts/validate_json.py
+```
+
+確保所有新增的 JSON 檔案通過驗證。
+
+### Step 7: 更新 Import Log
+
+在 `papers/IMPORT_LOG.md` 新增一筆記錄：
+
+```markdown
+| 日期 | Paper ID | Title | Authors | Year | Source | Measures Linked | Added By | Status |
+|------|----------|-------|---------|------|--------|-----------------|----------|--------|
+| YYYY-MM-DD | paper_XXX | 論文標題 | 作者 | 年份 | PDF/DOI | N | @Research Agent | ✅ success |
+```
+
+### Step 8: 儲存 PDF（若有）
+
+若使用者上傳 PDF，儲存至 `papers/raw/` 目錄。
+
+### Step 9: Git Commit
+
+```bash
+git add -A
+git commit -m "feat: 新增論文 paper_XXX - {論文標題}
+
+- 作者: {作者} ({年份})
+- 來源: {期刊/來源}
+- 新增 {N} 筆 Paper-Measure 關聯
+- 核心發現: {一句話摘要}"
+git push
+```
+
+### Step 10: 回報結果
+
+向使用者回報：
+1. ✅ 新增的 Paper ID 與標題
+2. 📎 關聯的 Measures 列表
+3. 🔗 驗證結果
+4. 📝 Log 記錄位置
+
+---
+
+## 6.2 Import Log 規範
+
+**Log 檔案位置：** `papers/IMPORT_LOG.md`
+
+**每次新增論文必須記錄：**
+- 日期
+- Paper ID
+- 論文標題
+- 作者
+- 年份
+- 來源（PDF/DOI/Manual）
+- 關聯 Measures 數量
+- 新增者（Agent 或 User）
+- 狀態（success/failed）
+
+**若新增失敗，記錄：**
+- 失敗原因
+- 驗證錯誤訊息
 
 ---
 
@@ -391,6 +525,11 @@ pytest tests/test_import_measure.py
 
 # Changelog
 
+- 2.1 — 2025-12-09: 新增論文匯入流程規範
+  - 新增 Section 6.1 新增論文標準流程（10 步驟）
+  - 新增 Section 6.2 Import Log 規範
+  - 新增 `papers/IMPORT_LOG.md` 記錄論文新增歷史
+  - 更新專案目錄結構（新增 index.json, schemas/, query 工具等）
 - 2.0 — 2025-12-09: 配合 QadrisFactorBase 四層架構重新定義
   - 新增四層架構說明與職責邊界
   - Paper JSON 新增 DOI / arXiv / SSRN / BibTeX 欄位
