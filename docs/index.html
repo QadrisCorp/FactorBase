@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactorBase - 因子文獻知識圖譜</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --success: #22c55e;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.15);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .stat-item strong {
+            font-size: 1.5rem;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--secondary);
+            border-radius: 8px 8px 0 0;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--border);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Cards & Tables */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg);
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+        }
+
+        tr:hover {
+            background: var(--bg);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: var(--border);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e1;
+        }
+
+        /* Search */
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            max-width: 400px;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 4px;
+        }
+
+        .tag-value { background: #dbeafe; color: #1e40af; }
+        .tag-momentum { background: #fef3c7; color: #92400e; }
+        .tag-profitability { background: #d1fae5; color: #065f46; }
+        .tag-investment { background: #fce7f3; color: #9d174d; }
+        .tag-size { background: #e0e7ff; color: #3730a3; }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        .measure-list {
+            list-style: none;
+        }
+
+        .measure-list li {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .measure-list li:last-child {
+            border-bottom: none;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                flex: 1;
+                min-width: 120px;
+            }
+
+            table {
+                font-size: 0.875rem;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📚 FactorBase</h1>
+            <p>Qadris Factor System — 文獻概念層知識圖譜</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <strong id="paper-count">0</strong>
+                    <span>Papers</span>
+                </div>
+                <div class="stat-item">
+                    <strong id="measure-count">0</strong>
+                    <span>Measures</span>
+                </div>
+                <div class="stat-item">
+                    <strong id="factor-count">0</strong>
+                    <span>Factors</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="papers">📄 所有論文</button>
+            <button class="tab-btn" data-tab="measures">📊 所有 Measures</button>
+            <button class="tab-btn" data-tab="search">🔍 查詢關聯</button>
+        </div>
+
+        <!-- Tab 1: Papers -->
+        <div id="papers" class="tab-content active">
+            <div class="card">
+                <h2>文獻列表</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 100px;">操作</th>
+                            <th>ID</th>
+                            <th>標題</th>
+                            <th>作者</th>
+                            <th>年份</th>
+                            <th>期刊</th>
+                        </tr>
+                    </thead>
+                    <tbody id="papers-table">
+                        <tr><td colspan="6" class="no-results">載入中...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 2: Measures -->
+        <div id="measures" class="tab-content">
+            <div class="card">
+                <h2>Measure 列表</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>名稱</th>
+                            <th>因子</th>
+                            <th>公式類型</th>
+                            <th>來源論文</th>
+                        </tr>
+                    </thead>
+                    <tbody id="measures-table">
+                        <tr><td colspan="5" class="no-results">載入中...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 3: Search -->
+        <div id="search" class="tab-content">
+            <div class="card">
+                <h2>依論文 ID 查詢關聯 Measures</h2>
+                <div class="search-box">
+                    <input type="text" id="paper-id-input" placeholder="輸入 Paper ID (例如: paper_001)">
+                    <button class="btn btn-primary" onclick="searchPaperMeasures()">查詢</button>
+                </div>
+                <div id="search-results">
+                    <p class="no-results">請輸入 Paper ID 進行查詢</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Paper Measures -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">論文關聯的 Measures</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modal-body">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data storage
+        let papersData = [];
+        let measuresData = [];
+        let paperMeasuresData = [];
+        let indexData = null;
+
+        // GitHub raw content base URL
+        const BASE_URL = 'https://raw.githubusercontent.com/QadrisCorp/FactorBase/main';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadAllData();
+            setupTabs();
+        });
+
+        // Load all JSON data
+        async function loadAllData() {
+            try {
+                // Load index first
+                const indexRes = await fetch(`${BASE_URL}/measures/index.json`);
+                indexData = await indexRes.json();
+
+                // Load paper measures relations
+                const relRes = await fetch(`${BASE_URL}/relations/paper_measures.json`);
+                const relData = await relRes.json();
+                paperMeasuresData = relData.paper_measure_links || [];
+
+                // Load all papers
+                const paperIds = ['paper_001', 'paper_002', 'paper_003', 'paper_004', 'paper_005', 'paper_006', 'paper_007'];
+                const paperPromises = paperIds.map(id => 
+                    fetch(`${BASE_URL}/papers/metadata/${id}.json`).then(r => r.json()).catch(() => null)
+                );
+                papersData = (await Promise.all(paperPromises)).filter(p => p !== null);
+
+                // Load all measures from index
+                const measurePromises = [];
+                for (const factor of indexData.factors) {
+                    for (const m of factor.measures) {
+                        measurePromises.push(
+                            fetch(`${BASE_URL}/measures/${m.file}`).then(r => r.json()).catch(() => null)
+                        );
+                    }
+                }
+                measuresData = (await Promise.all(measurePromises)).filter(m => m !== null);
+
+                // Update UI
+                updateStats();
+                renderPapersTable();
+                renderMeasuresTable();
+
+            } catch (error) {
+                console.error('Failed to load data:', error);
+            }
+        }
+
+        // Update statistics
+        function updateStats() {
+            document.getElementById('paper-count').textContent = papersData.length;
+            document.getElementById('measure-count').textContent = measuresData.length;
+            document.getElementById('factor-count').textContent = indexData ? indexData.factors.length : 0;
+        }
+
+        // Setup tab switching
+        function setupTabs() {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update buttons
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Update content
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    document.getElementById(btn.dataset.tab).classList.add('active');
+                });
+            });
+        }
+
+        // Render papers table
+        function renderPapersTable() {
+            const tbody = document.getElementById('papers-table');
+            if (papersData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="no-results">沒有找到論文</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = papersData.map(paper => `
+                <tr>
+                    <td>
+                        <button class="btn btn-primary" onclick="showPaperMeasures('${paper.paper_id}')">
+                            查詢 Measures
+                        </button>
+                    </td>
+                    <td><code>${paper.paper_id}</code></td>
+                    <td>${truncate(paper.title, 50)}</td>
+                    <td>${truncate(paper.authors, 30)}</td>
+                    <td>${paper.year}</td>
+                    <td>${truncate(paper.journal, 30)}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Render measures table
+        function renderMeasuresTable() {
+            const tbody = document.getElementById('measures-table');
+            if (measuresData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="no-results">沒有找到 Measures</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = measuresData.map(m => `
+                <tr>
+                    <td><code>${m.measure_id}</code></td>
+                    <td>${m.display_name}</td>
+                    <td><span class="tag tag-${m.factor.toLowerCase()}">${m.factor}</span></td>
+                    <td>${m.formula ? m.formula.type : '-'}</td>
+                    <td>${m.original_paper_id ? `<code>${m.original_paper_id}</code>` : '-'}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Show paper measures (modal)
+        function showPaperMeasures(paperId) {
+            const paper = papersData.find(p => p.paper_id === paperId);
+            const links = paperMeasuresData.filter(l => l.paper_id === paperId);
+
+            document.getElementById('modal-title').textContent = 
+                paper ? `${paper.title} (${paper.year})` : paperId;
+
+            if (links.length === 0) {
+                document.getElementById('modal-body').innerHTML = 
+                    '<p class="no-results">此論文沒有關聯的 Measures</p>';
+            } else {
+                const html = `
+                    <p style="margin-bottom: 16px; color: var(--secondary);">
+                        共 ${links.length} 個關聯 Measures
+                    </p>
+                    <ul class="measure-list">
+                        ${links.map(link => {
+                            const measure = measuresData.find(m => m.measure_id === link.measure_id);
+                            return `
+                                <li>
+                                    <div>
+                                        <strong>${link.measure_id}</strong>
+                                        ${measure ? ` - ${measure.display_name}` : ''}
+                                        <br>
+                                        <small style="color: var(--secondary);">
+                                            角色: ${link.role || '-'} | 
+                                            顯著性: ${link.significance || '-'}
+                                        </small>
+                                    </div>
+                                    ${measure ? `<span class="tag tag-${measure.factor.toLowerCase()}">${measure.factor}</span>` : ''}
+                                </li>
+                            `;
+                        }).join('')}
+                    </ul>
+                `;
+                document.getElementById('modal-body').innerHTML = html;
+            }
+
+            document.getElementById('modal').classList.add('active');
+        }
+
+        // Search paper measures (Tab 3)
+        function searchPaperMeasures() {
+            const paperId = document.getElementById('paper-id-input').value.trim();
+            const resultsDiv = document.getElementById('search-results');
+
+            if (!paperId) {
+                resultsDiv.innerHTML = '<p class="no-results">請輸入 Paper ID</p>';
+                return;
+            }
+
+            const paper = papersData.find(p => p.paper_id === paperId);
+            const links = paperMeasuresData.filter(l => l.paper_id === paperId);
+
+            if (!paper && links.length === 0) {
+                resultsDiv.innerHTML = `<p class="no-results">找不到 Paper ID: ${paperId}</p>`;
+                return;
+            }
+
+            let html = '';
+            
+            if (paper) {
+                html += `
+                    <div style="background: var(--bg); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                        <h4 style="margin-bottom: 8px;">${paper.title}</h4>
+                        <p style="color: var(--secondary); font-size: 0.875rem;">
+                            ${paper.authors} (${paper.year}) - ${paper.journal}
+                        </p>
+                    </div>
+                `;
+            }
+
+            if (links.length === 0) {
+                html += '<p class="no-results">此論文沒有關聯的 Measures</p>';
+            } else {
+                html += `
+                    <h4 style="margin-bottom: 12px;">關聯的 Measures (${links.length})</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Measure ID</th>
+                                <th>名稱</th>
+                                <th>因子</th>
+                                <th>角色</th>
+                                <th>顯著性</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${links.map(link => {
+                                const measure = measuresData.find(m => m.measure_id === link.measure_id);
+                                return `
+                                    <tr>
+                                        <td><code>${link.measure_id}</code></td>
+                                        <td>${measure ? measure.display_name : '-'}</td>
+                                        <td>${measure ? `<span class="tag tag-${measure.factor.toLowerCase()}">${measure.factor}</span>` : '-'}</td>
+                                        <td>${link.role || '-'}</td>
+                                        <td>${link.significance || '-'}</td>
+                                    </tr>
+                                `;
+                            }).join('')}
+                        </tbody>
+                    </table>
+                `;
+            }
+
+            resultsDiv.innerHTML = html;
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        // Close modal on outside click
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target.id === 'modal') closeModal();
+        });
+
+        // Helper: truncate text
+        function truncate(str, len) {
+            if (!str) return '-';
+            return str.length > len ? str.substring(0, len) + '...' : str;
+        }
+
+        // Allow Enter key to search
+        document.getElementById('paper-id-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') searchPaperMeasures();
+        });
+    </script>
+</body>
+</html>
