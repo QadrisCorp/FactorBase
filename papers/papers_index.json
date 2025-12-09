@@ -1,179 +1,301 @@
 {
   "by_id": {
-    "1": {
-      "paper_id": 1,
+    "paper_001": {
+      "paper_id": "paper_001",
       "title": "Common risk factors in the returns on stocks and bonds",
       "authors": "Fama, Eugene F.; French, Kenneth R.",
       "year": 1993,
       "journal": "Journal of Financial Economics",
+      "volume": "33",
+      "issue": "1",
+      "pages": "3-56",
+      "doi": "10.1016/0304-405X(93)90023-5",
+      "arxiv_id": null,
+      "ssrn_id": null,
+      "bibtex": "@article{fama1993common,\n  title={Common risk factors in the returns on stocks and bonds},\n  author={Fama, Eugene F and French, Kenneth R},\n  journal={Journal of Financial Economics},\n  volume={33},\n  number={1},\n  pages={3--56},\n  year={1993},\n  publisher={Elsevier}\n}",
       "market": "US",
       "asset_class": "Equity",
-      "abstract": "This paper identifies five common risk factors in the returns on stocks and bonds. There are three stock-market factors: an overall market factor and factors related to firm size and book-to-market equity. There are two bond-market factors, related to maturity and default risks. Stock returns have shared variation due to the stock-market factors, and they are linked to bond returns through shared variation in the bond-market factors. Controlling for the five factors, we find no evidence that corporate bond returns have special sensitivity to stock returns.",
+      "abstract": "This paper identifies five common risk factors in the returns on stocks and bonds. There are three stock-market factors: an overall market factor and factors related to firm size and book-to-market equity. There are two bond-market factors, related to maturity and default risks.",
       "conclusion_sign": "positive",
       "replicable": "yes",
       "notes": "Seminal paper introducing the three-factor model (Market, Size, Value). Forms the foundation for modern factor investing research. The SMB (Small Minus Big) and HML (High Minus Low) factors have become standard in asset pricing."
     },
-    "2": {
-      "paper_id": 2,
+    "paper_002": {
+      "paper_id": "paper_002",
       "title": "On Persistence in Mutual Fund Performance",
       "authors": "Carhart, Mark M.",
       "year": 1997,
       "journal": "Journal of Finance",
+      "volume": "52",
+      "issue": "1",
+      "pages": "57-82",
+      "doi": "10.1111/j.1540-6261.1997.tb03808.x",
+      "arxiv_id": null,
+      "ssrn_id": null,
+      "bibtex": "@article{carhart1997persistence,\n  title={On persistence in mutual fund performance},\n  author={Carhart, Mark M},\n  journal={Journal of Finance},\n  volume={52},\n  number={1},\n  pages={57--82},\n  year={1997},\n  publisher={Wiley}\n}",
       "market": "US",
       "asset_class": "Equity",
-      "abstract": "This paper examines the consistency and sources of mutual fund performance. Using a sample of 1,892 diversified equity mutual funds from 1962 to 1993, we find that the four-factor model that includes momentum (UMD - Up Minus Down) largely explains persistence in returns. Common factors in stock returns and investment expenses almost completely explain persistence in equity mutual funds' mean and risk-adjusted returns. Hendricks, Patel, and Zeckhauser's (1993) 'hot hands' result is mostly due to the one-year momentum effect of Jegadeesh and Titman (1993).",
+      "abstract": "This paper examines the consistency and sources of mutual fund performance. The four-factor model that includes momentum (UMD) largely explains persistence in returns.",
       "conclusion_sign": "positive",
       "replicable": "yes",
-      "notes": "Extended Fama-French three-factor model by adding momentum factor (UMD). The Carhart four-factor model (Market, Size, Value, Momentum) became a standard benchmark for performance evaluation. Demonstrated that momentum is a persistent factor in stock returns."
+      "notes": "Extended Fama-French three-factor model by adding momentum factor (UMD). The Carhart four-factor model became a standard benchmark for performance evaluation."
     },
-    "3": {
-      "paper_id": 3,
+    "paper_003": {
+      "paper_id": "paper_003",
       "title": "A five-factor asset pricing model",
       "authors": "Fama, Eugene F.; French, Kenneth R.",
       "year": 2015,
       "journal": "Journal of Financial Economics",
+      "volume": "116",
+      "issue": "1",
+      "pages": "1-22",
+      "doi": "10.1016/j.jfineco.2014.10.010",
+      "arxiv_id": null,
+      "ssrn_id": "2287202",
+      "bibtex": "@article{fama2015five,\n  title={A five-factor asset pricing model},\n  author={Fama, Eugene F and French, Kenneth R},\n  journal={Journal of Financial Economics},\n  volume={116},\n  number={1},\n  pages={1--22},\n  year={2015},\n  publisher={Elsevier}\n}",
       "market": "US",
       "asset_class": "Equity",
-      "abstract": "A five-factor model directed at capturing the size, value, profitability, and investment patterns in average stock returns performs better than the three-factor model of Fama and French (1993). The five-factor model's main problem is its failure to capture the low average returns on small stocks whose returns behave like those of firms that invest a lot despite low profitability. The model's performance is not sensitive to the way its factors are defined. With the addition of profitability and investment factors, the value factor of the three-factor model becomes redundant for describing average returns in the sample we examine.",
+      "abstract": "A five-factor model directed at capturing the size, value, profitability, and investment patterns in average stock returns performs better than the three-factor model.",
       "conclusion_sign": "positive",
       "replicable": "yes",
-      "notes": "Extended the three-factor model to five factors by adding profitability (RMW - Robust Minus Weak) and investment (CMA - Conservative Minus Aggressive) factors. Shows that profitability and investment patterns are priced in stock returns. The value factor (HML) becomes less important when profitability and investment are controlled."
+      "notes": "Extended the three-factor model to five factors by adding profitability (RMW) and investment (CMA) factors."
     },
-    "4": {
-      "paper_id": 4,
+    "paper_004": {
+      "paper_id": "paper_004",
       "title": "The other side of value: The gross profitability premium",
       "authors": "Novy-Marx, Robert",
       "year": 2013,
       "journal": "Journal of Financial Economics",
+      "volume": "108",
+      "issue": "1",
+      "pages": "1-28",
+      "doi": "10.1016/j.jfineco.2013.01.003",
+      "arxiv_id": null,
+      "ssrn_id": "1335524",
+      "bibtex": "@article{novymarx2013gross,\n  title={The other side of value: The gross profitability premium},\n  author={Novy-Marx, Robert},\n  journal={Journal of Financial Economics},\n  volume={108},\n  number={1},\n  pages={1--28},\n  year={2013},\n  publisher={Elsevier}\n}",
       "market": "US",
       "asset_class": "Equity",
-      "abstract": "Profitability, measured by gross profits-to-assets, has roughly the same power as book-to-market predicting the cross-section of average returns. Profitable firms generate significantly higher returns than unprofitable firms, despite having significantly higher valuation ratios. Controlling for profitability also dramatically increases the performance of value strategies, especially among the largest, most liquid stocks. These results are difficult to reconcile with popular explanations of the value premium, as profitable firms are less prone to distress, have longer cash-flow durations, and have lower levels of operating leverage.",
+      "abstract": "Profitability, measured by gross profits-to-assets, has roughly the same power as book-to-market predicting the cross-section of average returns.",
       "conclusion_sign": "positive",
       "replicable": "yes",
-      "notes": "Introduced gross profitability as a powerful predictor of stock returns. Gross profitability (revenue minus cost of goods sold, scaled by assets) is cleaner than traditional profitability measures. Combined with value, creates strong factor portfolios. Influenced the development of the Fama-French five-factor model."
+      "notes": "Introduced gross profitability as a powerful predictor of stock returns. Influenced the development of the Fama-French five-factor model."
     },
-    "5": {
-      "paper_id": 5,
+    "paper_005": {
+      "paper_id": "paper_005",
       "title": "Digesting anomalies: An investment approach",
       "authors": "Hou, Kewei; Xue, Chen; Zhang, Lu",
       "year": 2015,
       "journal": "Review of Financial Studies",
+      "volume": "28",
+      "issue": "3",
+      "pages": "650-705",
+      "doi": "10.1093/rfs/hhu068",
+      "arxiv_id": null,
+      "ssrn_id": "1549578",
+      "bibtex": "@article{hou2015digesting,\n  title={Digesting anomalies: An investment approach},\n  author={Hou, Kewei and Xue, Chen and Zhang, Lu},\n  journal={Review of Financial Studies},\n  volume={28},\n  number={3},\n  pages={650--705},\n  year={2015},\n  publisher={Oxford University Press}\n}",
       "market": "US",
       "asset_class": "Equity",
-      "abstract": "We build on the investment approach of Cochrane (1991, 1996) to develop an alternative factor model that uses the market factor, a size factor, an investment factor, and a profitability factor (the q-factor model). The q-factor model largely summarizes the cross-section of average stock returns. A comprehensive examination of nearly 80 anomalies shows that about one-half of the anomalies are insignificant in the broad cross-section of stocks, and the q-factor model fully captures about one-half of the significant anomalies. With the exception of momentum, the q-factor model outperforms the Fama-French three-factor and four-factor models across all the anomalies.",
+      "abstract": "We develop the q-factor model using market, size, investment, and profitability factors. The q-factor model largely summarizes the cross-section of average stock returns.",
       "conclusion_sign": "positive",
       "replicable": "yes",
-      "notes": "Introduced the q-factor model based on investment theory. Uses four factors: Market, Size (ME), Investment (I/A), and Profitability (ROE). Provides a theoretical foundation for factor models based on corporate investment decisions. Successfully explains many anomalies better than traditional models, except momentum."
+      "notes": "Introduced the q-factor model based on investment theory. Uses four factors: Market, Size (ME), Investment (I/A), and Profitability (ROE)."
     },
-    "6": {
-      "paper_id": 6,
+    "paper_006": {
+      "paper_id": "paper_006",
       "title": "Value and Momentum Everywhere",
       "authors": "Asness, Clifford S.; Moskowitz, Tobias J.; Pedersen, Lasse Heje",
       "year": 2013,
       "journal": "Journal of Finance",
+      "volume": "68",
+      "issue": "3",
+      "pages": "929-985",
+      "doi": "10.1111/jofi.12021",
+      "arxiv_id": null,
+      "ssrn_id": "1363476",
+      "bibtex": "@article{asness2013value,\n  title={Value and momentum everywhere},\n  author={Asness, Clifford S and Moskowitz, Tobias J and Pedersen, Lasse Heje},\n  journal={Journal of Finance},\n  volume={68},\n  number={3},\n  pages={929--985},\n  year={2013},\n  publisher={Wiley}\n}",
       "market": "Global",
       "asset_class": "Multi-Asset",
-      "abstract": "We find consistent value and momentum return premia across eight diverse markets and asset classes, and a strong common factor structure among their returns. Value and momentum returns correlate more strongly across asset classes than passive exposures to the asset classes, but value and momentum are negatively correlated with each other, both within and across asset classes. Our evidence suggests that value and momentum returns have a common component across markets and asset classes, consistent with theories based on characteristic risk or market inefficiency, but difficult to reconcile with asset-class-specific characteristics or market frictions.",
+      "abstract": "We find consistent value and momentum return premia across eight diverse markets and asset classes. Value and momentum are negatively correlated with each other.",
       "conclusion_sign": "positive",
       "replicable": "yes",
-      "notes": "Demonstrates that value and momentum factors exist across multiple asset classes (stocks, bonds, currencies, commodities) and geographic markets. Shows value and momentum are negatively correlated with each other. Provides evidence for universal nature of these factors, supporting both risk-based and behavioral explanations."
+      "notes": "Demonstrates that value and momentum factors exist across multiple asset classes and geographic markets."
     },
-    "7": {
-      "paper_id": 7,
+    "paper_007": {
+      "paper_id": "paper_007",
       "title": "Quality Minus Junk",
       "authors": "Asness, Clifford S.; Frazzini, Andrea; Pedersen, Lasse Heje",
       "year": 2019,
       "journal": "Review of Accounting Studies",
+      "volume": "24",
+      "issue": "1",
+      "pages": "34-112",
+      "doi": "10.1007/s11142-018-9470-2",
+      "arxiv_id": null,
+      "ssrn_id": "2312432",
+      "bibtex": "@article{asness2019quality,\n  title={Quality minus junk},\n  author={Asness, Clifford S and Frazzini, Andrea and Pedersen, Lasse Heje},\n  journal={Review of Accounting Studies},\n  volume={24},\n  number={1},\n  pages={34--112},\n  year={2019},\n  publisher={Springer}\n}",
       "market": "Global",
       "asset_class": "Equity",
-      "abstract": "We define a quality security as one that has characteristics that, all-else-equal, an investor should be willing to pay a higher price for: stocks that are safe, profitable, growing, and well managed. High-quality stocks do have higher prices on average, but not by a lot. A portfolio that is long quality stocks and short junk stocks earns significant risk-adjusted returns in the U.S. and globally across 24 countries. The quality-minus-junk (QMJ) factor is not subsumed by a wide variety of existing factors, and it is priced in the cross-section.",
+      "abstract": "We define a quality security as one that is safe, profitable, growing, and well managed. High-quality stocks outperform low-quality stocks on a risk-adjusted basis globally.",
       "conclusion_sign": "positive",
       "replicable": "yes",
-      "notes": "Introduced a comprehensive quality factor (QMJ) combining multiple quality characteristics: profitability, growth, safety, and payout. Quality stocks are defined as profitable, stable, growing companies with sound governance. Shows that high-quality stocks outperform low-quality stocks on a risk-adjusted basis globally. The quality factor is distinct from other known factors."
+      "notes": "Introduced a comprehensive quality factor (QMJ) combining profitability, growth, safety, and payout characteristics."
+    },
+    "paper_008": {
+      "paper_id": "paper_008",
+      "title": "Factor Momentum and the Momentum Factor",
+      "authors": "Ehsani, Sina; Linnainmaa, Juhani T.",
+      "year": 2019,
+      "journal": "NBER Working Paper",
+      "bibtex": "@techreport{ehsani2019factor,\n  title={Factor Momentum and the Momentum Factor},\n  author={Ehsani, Sina and Linnainmaa, Juhani T.},\n  year={2019},\n  month={February},\n  institution={National Bureau of Economic Research},\n  type={Working Paper},\n  number={25551},\n  url={http://www.nber.org/papers/w25551}\n}",
+      "market": "US",
+      "asset_class": "Equity",
+      "abstract": "Momentum in individual stock returns emanates from momentum in factor returns. Most factors are positively autocorrelated: the average factor earns a monthly return of 1 basis point following a year of losses and 53 basis points following a positive year. Factor momentum explains all forms of individual stock momentum. Stock momentum strategies indirectly time factors: they profit when the factors remain autocorrelated, and crash when these autocorrelations break down. Our key result is that momentum is not a distinct risk factor; it aggregates the autocorrelations found in all other factors.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "NBER Working Paper No. 25551. 本文提出 Factor Momentum 概念，認為動量效應來自於因子報酬的自相關性，而非獨立的風險因子。研究涵蓋 20 個因子，發現平均因子在正報酬年度後月報酬 52bp，負報酬年度後僅 2bp。Keywords: factor momentum, momentum factor, autocorrelation, factor returns, time-series momentum."
+    },
+    "paper_009": {
+      "paper_id": "paper_009",
+      "title": "The Volatility Effect Revisited",
+      "authors": "Blitz, David; van Vliet, Pim; Baltussen, Guido",
+      "year": 2019,
+      "journal": "SSRN Working Paper",
+      "ssrn_id": "3442749",
+      "bibtex": "@article{blitz2019volatility,\n  title={The Volatility Effect Revisited},\n  author={Blitz, David and van Vliet, Pim and Baltussen, Guido},\n  year={2019},\n  journal={SSRN Working Paper},\n  note={Available at SSRN: https://ssrn.com/abstract=3442749}\n}",
+      "market": "Global",
+      "asset_class": "Equity",
+      "abstract": "High-risk stocks do not have higher returns than low-risk stocks in all major stock markets. This paper provides a comprehensive overview of this low-risk effect, from the earliest asset pricing studies in the nineteen seventies to the most recent empirical findings and interpretations since. Volatility appears to be the main driver of the anomaly, which is highly persistent over time and across markets, and which cannot be explained by other factors such as value, profitability, or exposure to interest rate changes. From a practical perspective we argue that low-risk investing requires little turnover, that volatilities are more important than correlations, that low-risk indices are suboptimal and vulnerable to overcrowding, and that other factors can be efficiently integrated into a low-risk strategy. Finally, we find little evidence that the low-risk effect is being arbitraged away, as many investors are either neutrally positioned, or even on the other side of the low-risk trade.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "Robeco 研究團隊的低波動效應綜述論文。核心發現：高風險股票並未獲得更高報酬，低波動異常持續存在且跨市場穩定，無法被 value、profitability 等因子解釋。JEL: G11, G12, G14。Keywords: low risk, low volatility, low beta, minimum variance, anomaly, factor investing, smart beta."
+    },
+    "paper_010": {
+      "paper_id": "paper_010",
+      "title": "The Volatility Effect: Lower Risk without Lower Return",
+      "authors": "Blitz, David C.; van Vliet, Pim",
+      "year": 2007,
+      "journal": "ERIM Report Series",
+      "bibtex": "@techreport{blitz2007volatility,\n  title={The Volatility Effect: Lower Risk without Lower Return},\n  author={Blitz, David C and van Vliet, Pim},\n  year={2007},\n  institution={Erasmus Research Institute of Management (ERIM)},\n  type={ERIM Report Series Research in Management},\n  number={ERS-2007-044-F\\&A},\n  url={https://hdl.handle.net/1765/10033}\n}",
+      "market": "Global",
+      "asset_class": "Equity",
+      "abstract": "Stocks with low volatility earn high risk-adjusted returns. The annual alpha spread of global low versus high volatility decile portfolios amounts to 12% over the 1986-2006 period. The volatility effect is observed within the US, European and Japanese markets, and cannot be explained by value and size effects.",
+      "conclusion_sign": "positive",
+      "replicable": "yes",
+      "notes": "低波動異常效應的原始論文（2007）。核心發現：低波動股票獲得更高的風險調整報酬，全球低波動 vs 高波動十分位投資組合年化 alpha 差距達 12%。此效應在美國、歐洲、日本市場皆存在，且無法被 value 和 size 因子解釋。此研究為 Robeco 低波動策略的學術基礎，paper_009 (2019) 為其後續更新版本。"
     }
   },
   "by_market": {
     "US": [
-      1,
-      2,
-      3,
-      4,
-      5
+      "paper_001",
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_008"
     ],
     "Global": [
-      6,
-      7
+      "paper_006",
+      "paper_007",
+      "paper_009",
+      "paper_010"
     ]
   },
   "by_asset_class": {
     "Equity": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      7
+      "paper_001",
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_008",
+      "paper_009",
+      "paper_010"
     ],
     "Multi-Asset": [
-      6
+      "paper_006"
     ]
   },
   "by_year": {
     "1993": [
-      1
+      "paper_001"
     ],
     "1997": [
-      2
+      "paper_002"
     ],
     "2015": [
-      3,
-      5
+      "paper_003",
+      "paper_005"
     ],
     "2013": [
-      4,
-      6
+      "paper_004",
+      "paper_006"
     ],
     "2019": [
-      7
+      "paper_007",
+      "paper_008",
+      "paper_009"
+    ],
+    "2007": [
+      "paper_010"
     ]
   },
   "by_author": {
     "Fama, Eugene F.": [
-      1,
-      3
+      "paper_001",
+      "paper_003"
     ],
     "French, Kenneth R.": [
-      1,
-      3
+      "paper_001",
+      "paper_003"
     ],
     "Carhart, Mark M.": [
-      2
+      "paper_002"
     ],
     "Novy-Marx, Robert": [
-      4
+      "paper_004"
     ],
     "Hou, Kewei": [
-      5
+      "paper_005"
     ],
     "Xue, Chen": [
-      5
+      "paper_005"
     ],
     "Zhang, Lu": [
-      5
+      "paper_005"
     ],
     "Asness, Clifford S.": [
-      6,
-      7
+      "paper_006",
+      "paper_007"
     ],
     "Moskowitz, Tobias J.": [
-      6
+      "paper_006"
     ],
     "Pedersen, Lasse Heje": [
-      6,
-      7
+      "paper_006",
+      "paper_007"
     ],
     "Frazzini, Andrea": [
-      7
+      "paper_007"
+    ],
+    "Ehsani, Sina": [
+      "paper_008"
+    ],
+    "Linnainmaa, Juhani T.": [
+      "paper_008"
+    ],
+    "Blitz, David": [
+      "paper_009"
+    ],
+    "van Vliet, Pim": [
+      "paper_009",
+      "paper_010"
+    ],
+    "Baltussen, Guido": [
+      "paper_009"
+    ],
+    "Blitz, David C.": [
+      "paper_010"
     ]
   }
 }

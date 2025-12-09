@@ -1,0 +1,14 @@
+{
+  "paper_id": "paper_010",
+  "title": "The Volatility Effect: Lower Risk without Lower Return",
+  "authors": "Blitz, David C.; van Vliet, Pim",
+  "year": 2007,
+  "journal": "ERIM Report Series",
+  "bibtex": "@techreport{blitz2007volatility,\n  title={The Volatility Effect: Lower Risk without Lower Return},\n  author={Blitz, David C and van Vliet, Pim},\n  year={2007},\n  institution={Erasmus Research Institute of Management (ERIM)},\n  type={ERIM Report Series Research in Management},\n  number={ERS-2007-044-F\\&A},\n  url={https://hdl.handle.net/1765/10033}\n}",
+  "market": "Global",
+  "asset_class": "Equity",
+  "abstract": "Stocks with low volatility earn high risk-adjusted returns. The annual alpha spread of global low versus high volatility decile portfolios amounts to 12% over the 1986-2006 period. The volatility effect is observed within the US, European and Japanese markets, and cannot be explained by value and size effects.",
+  "conclusion_sign": "positive",
+  "replicable": "yes",
+  "notes": "低波動異常效應的原始論文（2007）。核心發現：低波動股票獲得更高的風險調整報酬，全球低波動 vs 高波動十分位投資組合年化 alpha 差距達 12%。此效應在美國、歐洲、日本市場皆存在，且無法被 value 和 size 因子解釋。此研究為 Robeco 低波動策略的學術基礎，paper_009 (2019) 為其後續更新版本。"
+}

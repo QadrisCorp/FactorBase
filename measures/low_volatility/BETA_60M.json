@@ -11,7 +11,7 @@
     "window": "60M"
   },
   "normalization": "none",
-  "original_paper_id": null,
+  "original_paper_id": "paper_010",
   "aliases": ["Market Beta", "Systematic Risk", "CAPM Beta"],
   "notes": "Black, Jensen & Scholes (1972) 及 Fama & French (1992) 發現 beta 與報酬的關係遠比 CAPM 預測的平坦。Kenneth French Data Library 提供 60 個月 beta 排序的投資組合數據。"
 }
