@@ -11,7 +11,7 @@
     "window": "36M"
   },
   "normalization": "rank",
-  "original_paper_id": "paper_010",
+  "original_paper_id": "paper_009",
   "aliases": ["Historical Volatility", "Total Volatility", "Realized Volatility"],
   "notes": "Blitz and van Vliet (2007) 發現總波動度至少與 beta 同樣有效。低波動效應自 1970 年代即有文獻記載，但長期被忽視。"
 }
