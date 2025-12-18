@@ -1,6 +1,6 @@
 # QadrisCorp — Global Copilot Instructions
-Version: 2.3  
-Last Updated: 2025-12-05  
+Version: 2.4  
+Last Updated: 2025-12-18  
 Scope: 所有專案的 Copilot 行為規範  
 Note: 部門職責請依《company_policy.md》；跨部門流程請依《collaborative_rules.md》。
 
@@ -222,7 +222,38 @@ README.md 必須包含：
 
 ---
 
-# 10. Issue & PR Workflow（Issue 與 PR 流程）
+# 10. 環境變數命名標準
+
+> 詳細規範請參閱 `.github/env-naming-standard.md`
+
+## 10.1 資料庫連線變數
+
+所有 repo 的 `.env` 檔案**必須**使用以下標準命名：
+
+| 變數名稱 | 說明 |
+|----------|------|
+| `DB_HOST` | 資料庫主機位址 |
+| `DB_PORT` | 資料庫連接埠 |
+| `DB_USER` | 資料庫使用者名稱 |
+| `DB_PASSWORD` | 資料庫密碼 |
+| `DB_NAME` | 資料庫名稱 |
+
+## 10.2 禁止使用的命名
+
+以下命名方式**不符合標準**，禁止使用：
+
+- `host`、`port`、`username`、`pwd`、`pass`、`database`
+- `MYSQL_HOST`、`MARIADB_HOST` 等資料庫特定前綴
+
+## 10.3 .env.example 要求
+
+每個 repo 都**必須**提供 `.env.example` 範本檔案，包含：
+- 所有必要環境變數（值為佔位符）
+- 適當的分類註解
+
+---
+
+# 11. Issue & PR Workflow（Issue 與 PR 流程）
 
 **Template 位置**：
 - Bug 回報：`.github/ISSUE_TEMPLATE/bug_report.md`
@@ -252,9 +283,19 @@ Copilot 協助產生 Issue/PR 草稿時，應依照上述模板格式輸出。
 
 ---
 
-# 11. Versioning
+# 12. Versioning
 
 更新需版本號、日期與 Changelog。
+
+---
+
+# Changelog
+
+## v2.4 (2025-12-18)
+- 新增 #10 環境變數命名標準
+
+## v2.3 (2025-12-05)
+- 初版發佈
 
 ---
 
