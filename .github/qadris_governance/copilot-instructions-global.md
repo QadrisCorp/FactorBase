@@ -1,6 +1,6 @@
 # QadrisCorp — Global Copilot Instructions
-Version: 2.12  
-Last Updated: 2025-12-25  
+Version: 2.13  
+Last Updated: 2025-12-26  
 Scope: 所有專案的 Copilot 行為規範  
 Note: 部門職責請依《company_policy.md》；跨部門流程請依《collaborative_rules.md》。
 
@@ -139,6 +139,7 @@ Note: 部門職責請依《company_policy.md》；跨部門流程請依《collab
 | `qadris_standards/architecture-standard.md` | **設計專案架構時（必讀）** |
 | `qadris_standards/issue-standard.md` | **建立 GitHub Issue 時（必讀）** |
 | `qadris_standards/implementation-standard.md` | **實作程式碼時（必讀）** |
+| `qadris_standards/interface-standard.md` | **開發 CLI/API/SDK 介面時（必讀）** |
 | `qadris_standards/env-naming-standard.md` | 建立 `.env` 或環境變數時 |
 | `qadris_standards/workflow-standard.md` | 建立 GitHub Actions 時 |
 | `qadris_standards/testing-standard.md` | 撰寫測試時 |
@@ -177,6 +178,7 @@ Copilot 在執行以下任務**前**，**必須先讀取**對應規範檔案：
 | 設計專案架構 | `qadris_standards/architecture-standard.md` |
 | 建立 GitHub Issue | `qadris_standards/issue-standard.md`、`ISSUE_TEMPLATE/feature_request.md` 或 `bug_report.md` |
 | 實作程式碼 | `qadris_standards/implementation-standard.md` |
+| 開發 CLI/API/SDK 介面 | `qadris_standards/interface-standard.md`、`qadris_standards/architecture-standard.md` |
 | 撰寫測試 | `qadris_standards/testing-standard.md` |
 | 建立/修改 `.env` | `qadris_standards/env-naming-standard.md` |
 | 建立 GitHub Actions | `qadris_standards/workflow-standard.md` |
@@ -286,6 +288,12 @@ Copilot 協助產生 Issue/PR 草稿時，應依照上述模板格式輸出。
 ---
 
 # Changelog
+
+## v2.13 (2025-12-26)
+- 新增 `interface-standard.md` 對外介面（CLI/API/SDK）開發規範
+- Section 8.2 新增 interface-standard.md 參考
+- Section 8.5 新增「開發 CLI/API/SDK 介面」任務對應
+- 移除 `cli-standard.md`（已整合至 interface-standard.md）
 
 ## v2.12 (2025-12-25)
 - 重構 Section 8：從「任務對應必讀文件」改為「規範文件索引」

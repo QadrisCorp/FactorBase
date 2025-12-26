@@ -16,6 +16,7 @@ Scope: 程式碼實作的標準流程與品質要求
 issue-standard.md        → 定義「做什麼」（需求）
 implementation-standard.md → 定義「怎麼做」（本文件）
 architecture-standard.md → 定義「結構長什麼樣」
+interface-standard.md    → 定義「對外介面怎麼寫」（CLI/API/SDK）
 testing-standard.md      → 定義「測試怎麼寫」
 pr-review-standard.md    → 定義「如何審查驗收」
 ```
@@ -256,6 +257,7 @@ def fetch_data(symbol: str) -> pd.DataFrame:
 | 實作類型 | 必讀標準 |
 |----------|----------|
 | 初版開發 | architecture-standard.md, testing-standard.md, product_spec.md |
+| CLI/API 開發 | interface-standard.md, architecture-standard.md |
 | 功能新增 | 現有程式碼, testing-standard.md |
 | Bug 修復 | 現有程式碼, 相關測試 |
 | 重構 | architecture-standard.md, 現有測試 |

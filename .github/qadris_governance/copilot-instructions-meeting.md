@@ -250,7 +250,39 @@ ls -la /home/chubear/ | grep -E "^d"
 du -sh /home/chubear/*/ 2>/dev/null | sort -h | tail -20
 ```
 
-#### 1.4.4 報告格式範例
+#### 1.4.4 Nginx 網站服務狀態
+
+| 項目 | 檢查內容 |
+|------|----------|
+| Nginx 容器狀態 | 運行中 / 停止 |
+| 運行網站數量 | 目前啟用的網站配置數 |
+| 各網站狀態 | 可連線 / 異常 |
+| SSL 憑證 | 有效期限 |
+
+**檢查指令範例**：
+```bash
+# 使用自動檢查腳本（建議）
+bash reports/check_nginx_sites.sh
+
+# 或手動檢查：列出所有網站配置
+docker exec nginx-multisites-nginx-1 ls /etc/nginx/conf.d/*.conf
+
+# 提取各網站 server_name
+for conf in $(docker exec nginx-multisites-nginx-1 ls /etc/nginx/conf.d/*.conf); do
+  echo "=== $conf ===" 
+  docker exec nginx-multisites-nginx-1 grep -E "server_name|proxy_pass|alias" $conf 2>/dev/null | head -5
+done
+```
+
+**顯示格式規範**：
+
+| # | 網域 | 服務 | 類型 | 狀態 |
+|---|------|------|------|------|
+| 1 | `example.dottdot.com` | 服務名稱 | Proxy / Static | ✅ / ❌ |
+
+> **說明**：網站清單由腳本動態查詢，會議前執行 `reports/check_nginx_sites.sh` 即可取得最新狀態。
+
+#### 1.4.5 報告格式範例
 
 ```
 🔧 Infrastructure Team 系統狀態報告
@@ -267,6 +299,16 @@ du -sh /home/chubear/*/ 2>/dev/null | sort -h | tail -20
 ├── 服務狀態：✅ 運行中
 ├── 運行容器：X 個
 └── 異常容器：無
+
+🌐 Nginx 網站服務：
+├── 運行網站數：10 個
+├── bear.dottdot.com (Odoo)：✅
+├── zammad.dottdot.com (客服)：✅
+├── airflow.dottdot.com (排程)：✅
+├── api1.dottdot.com (WebAPI)：✅
+├── monitor.dottdot.com (監控)：✅
+├── backtest.dottdot.com (回測)：✅
+└── ...其他服務：✅
 
 📁 專案資料夾：
 ├── 管理專案數：XX 個
